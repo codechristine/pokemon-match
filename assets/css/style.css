@@ -143,3 +143,40 @@ main {
 .avoid-clicks {
   pointer-events: none;
 }
+
+#modalShadow {
+  background-color: rgba(0,0,0,.4);
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+}
+
+#modalBody {
+  background-color: white;
+  height: 50vh;
+  width: 50vw;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+}
+
+#modalContent {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 100px;
+}
+
+.modalClose {
+  background-color: lightgrey;
+  font-size: 20px;
+  border-radius: 10px;
+  margin: auto;
+  display: block;
+  margin-top: 20px;
+}
