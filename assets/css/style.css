@@ -1,1 +1,145 @@
+header {
+    padding: 20px 10px;
+    text-align: center;
+    border: solid black;
+    font-size: 50px;
+}
 
+body {
+    background-image: url("../images/lfz-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main-game-container {
+  display: flex;
+}
+
+.statsContainer {
+    margin-top: 15px;
+    border: 2px solid black;
+    font-size: 20px;
+    width: 180px;
+    height: 620px;
+    text-align: center;
+    flex-direction: column;
+}
+
+.gamesPlayed,
+.playedNum,
+.gameAttempt,
+.attemptNum,
+.gamesAccuracy,
+.accuracyNum {
+    border: solid black;
+    border-radius: 5px;
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    line-height: 3.2rem;
+    margin: 5px auto;
+}
+
+main {
+    width: 85%;
+    display: flex;
+    border: 2px solid black;
+    justify-content: space-around;
+    margin-top: 15px;
+    margin-left: 5px;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+}
+
+.card {
+  position: relative;
+  height: 200px;
+  width: 15%;
+}
+
+.lfz-card {
+    background-image: url("../images/lfz-card.jpg");
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    border: solid red;
+    position: absolute;
+}
+
+.css-logo {
+    background-image: url("../images/css-logo.png");
+    background-size: contain;
+    height: 100%;
+    width: 100%;
+}
+
+.docker-logo {
+    background-image: url("../images/docker-logo.jpg");
+    background-size: contain;
+    height: 100%;
+    width: 100%;
+}
+
+.gitHub-logo {
+    background-image: url("../images/gitHub-logo.png");
+    background-size: contain;
+    height: 100%;
+    width: 100%;
+  }
+
+.html-logo {
+    background-image: url("../images/html-logo.png");
+    background-size: contain;
+    height: 100%;
+    width: 100%;
+}
+
+.js-logo {
+    background-image: url("../images/js-logo.png");
+    background-size: contain;
+    height: 100%;
+    width: 100%;
+}
+
+.mysql-logo {
+    background-image: url("../images/mysql-logo.jpg");
+    background-size: contain;
+    height: 100%;
+    width: 100%;
+}
+
+.node-logo {
+    background-image: url("../images/node-logo.png");
+    background-size: contain;
+    height: 100%;
+    width: 100%;
+}
+
+.php-logo {
+    background-image: url("../images/php-logo.jpeg");
+    background-size: contain;
+    height: 100%;
+    width: 100%;
+}
+
+.react-logo {
+    background-image: url("../images/react-logo.png");
+    background-size: contain;
+    height: 100%;
+    width: 100%;
+}
+
+.hidden {
+    display: none;
+}
+
+.avoid-clicks {
+  pointer-events: none;
+}
