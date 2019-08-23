@@ -3,9 +3,9 @@ $(document).ready(initializeApp);
 var firstCardClicked = null;
 var secondCardClicked = null;
 var matches = null;
-var max_matches = 2;
-var attempts = null;
-var games_played = null;
+var max_matches = 9;
+var attempts = 0;
+var games_played = 0;
 
 
 function initializeApp() {
@@ -20,8 +20,6 @@ function handleCardClick(event) {
   console.log(event);
   $(this).addClass('hidden');
   clickedCard();
-  attempts++;
-  games_played++;
 }
 
 function allCardsAreMatched() {
@@ -49,7 +47,9 @@ function clickedCard() {
       console.log("Cards Match")
       $('.lfz-card').addClass('avoid-clicks')
       matches++;
+      attempts++;
       allCardsAreMatched()
+      displayStats()
       firstCardClicked = null;
       secondCardClicked = null;
       setTimeout(function () {
@@ -60,6 +60,8 @@ function clickedCard() {
     } else if (urlFirstCard !== urlSecondCard) {
       console.log('Cards Dont Match')
       $('.lfz-card').addClass('avoid-clicks');
+      attempts++;
+      displayStats()
       setTimeout(function () {
         $(firstCardClicked).removeClass('hidden');
         firstCardClicked = null;
@@ -68,8 +70,19 @@ function clickedCard() {
         $('.lfz-card').removeClass('avoid-clicks');
       }, 1500);
   }
+  if (matches === max_matches) {
+    games_played++;
+    displayStats()
+  }
 }
 
-function calculateAccuracy () {
+function displayStats() {
+    $('.playedNum').text(games_played);
+    $('.attemptNum').text(attempts);
+    $('.accuracyNum').text(calculateAccuracy);
+}
 
+function calculateAccuracy() {
+  var calculatedAccuracyResult = Math.round(matches / max_matches * 100, 0) + '%'
+  return calculatedAccuracyResult;
 }
