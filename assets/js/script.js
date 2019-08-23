@@ -10,9 +10,12 @@ var games_played = 0;
 
 function initializeApp() {
 
-  $('.lfz-card').on('click', handleCardClick);
+  $('.pokemon-card').on('click', handleCardClick);
   $('.modalClose').click(function() {
-      $('#modalShadow').addClass('hidden')
+      $('#modalShadow').toggleClass('hidden');
+    $('.pokemon-card').toggleClass('hidden');
+      resetStats();
+      displayStats();
   });
 }
 
@@ -45,7 +48,7 @@ function clickedCard() {
 
     if (urlFirstCard === urlSecondCard) {
       console.log("Cards Match")
-      $('.lfz-card').addClass('avoid-clicks')
+      $('.pokemon-card').addClass('avoid-clicks')
       matches++;
       attempts++;
       allCardsAreMatched()
@@ -53,13 +56,13 @@ function clickedCard() {
       firstCardClicked = null;
       secondCardClicked = null;
       setTimeout(function () {
-        $('.lfz-card').removeClass('avoid-clicks')
+        $('.pokemon-card').removeClass('avoid-clicks')
         $(firstCardClicked).removeClass('hidden');
         $(secondCardClicked).removeClass('hidden');
-      }, 1500);
+      }, 800);
     } else if (urlFirstCard !== urlSecondCard) {
       console.log('Cards Dont Match')
-      $('.lfz-card').addClass('avoid-clicks');
+      $('.pokemon-card').addClass('avoid-clicks');
       attempts++;
       displayStats()
       setTimeout(function () {
@@ -67,12 +70,13 @@ function clickedCard() {
         firstCardClicked = null;
         $(secondCardClicked).removeClass('hidden');
         secondCardClicked = null;
-        $('.lfz-card').removeClass('avoid-clicks');
-      }, 1500);
+        $('.pokemon-card').removeClass('avoid-clicks');
+      }, 800);
   }
   if (matches === max_matches) {
     games_played++;
-    displayStats()
+    displayStats();
+    resetStats();
   }
 }
 
@@ -85,4 +89,9 @@ function displayStats() {
 function calculateAccuracy() {
   var calculatedAccuracyResult = Math.round(matches / max_matches * 100, 0) + '%'
   return calculatedAccuracyResult;
+}
+
+function resetStats() {
+  matches = null;
+  attempts = 0;
 }
