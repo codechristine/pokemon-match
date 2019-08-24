@@ -6,18 +6,47 @@ var matches = null;
 var max_matches = 9;
 var attempts = 0;
 var games_played = 0;
+var audio = new Audio("SFX_TURN_ON_PC.wav");
+
+// var currentRound = 0;
+
+
 
 
 function initializeApp() {
-
-  $('.pokemon-card').on('click', handleCardClick);
+  audio.play();
+  // loadCurrentRound();
+  $('.pokeball').on('click', handleCardClick);
   $('.modalClose').click(function() {
       $('#modalShadow').toggleClass('hidden');
-    $('.pokemon-card').toggleClass('hidden');
+    $('.pokeball').toggleClass('hidden');
       resetStats();
       displayStats();
   });
 }
+// function loadCurrentRound() {
+//   var background = rounds[currentRound].background;
+//   var cards = rounds[currentRound].pokemon;
+//   $("#pokemonArena").empty();
+//   for( var pokeI = 0; pokeI < cards.length; pokeI++){
+//     var currentCard = cards[pokeI];
+//     addCardToGameArea( currentCard.front, currentCard.pokemonType);
+//   }
+// }
+/*
+        <div class='card'>
+          <div class='pokeball' data-pokemon="caterpie"></div>
+          <div class='pokemon-butterfree'></div>
+        </div>
+*/
+// function addCardToGameArea( pokemonClass, pokemonType ){
+//   var card = $("<div>").addClass('card');
+//   var pokeball = $("<div>").addClass('pokeball').attr('data-pokemon', pokemonType);
+//   var pokemon = $("<div>").addClass( pokemonClass );
+
+//   card.append( pokeball, pokemon);
+//   $("#pokemonArena").append(card);
+// }
 
 function handleCardClick(event) {
   console.log(event);
@@ -41,14 +70,16 @@ function clickedCard() {
   }
   secondCardClicked = $(event.currentTarget);
 
-  var urlFirstCard = firstCardClicked.siblings().css('background-image');
+  // var urlFirstCard = firstCardClicked.attr('data-pokemon');
+var urlFirstCard = firstCardClicked.siblings().css('background-image');
   console.log(urlFirstCard);
-  var urlSecondCard = secondCardClicked.siblings().css('background-image');
+  // var urlSecondCard = secondCardClicked.attr('data-pokemon');
+var urlSecondCard = secondCardClicked.siblings().css('background-image');
   console.log(urlSecondCard);
 
     if (urlFirstCard === urlSecondCard) {
       console.log("Cards Match")
-      $('.pokemon-card').addClass('avoid-clicks')
+      $('.pokeball').addClass('avoid-clicks')
       matches++;
       attempts++;
       allCardsAreMatched()
@@ -56,13 +87,13 @@ function clickedCard() {
       firstCardClicked = null;
       secondCardClicked = null;
       setTimeout(function () {
-        $('.pokemon-card').removeClass('avoid-clicks')
+        $('.pokeball').removeClass('avoid-clicks')
         $(firstCardClicked).removeClass('hidden');
         $(secondCardClicked).removeClass('hidden');
-      }, 800);
+      }, 500);
     } else if (urlFirstCard !== urlSecondCard) {
       console.log('Cards Dont Match')
-      $('.pokemon-card').addClass('avoid-clicks');
+      $('.pokeball').addClass('avoid-clicks');
       attempts++;
       displayStats()
       setTimeout(function () {
@@ -70,8 +101,8 @@ function clickedCard() {
         firstCardClicked = null;
         $(secondCardClicked).removeClass('hidden');
         secondCardClicked = null;
-        $('.pokemon-card').removeClass('avoid-clicks');
-      }, 800);
+        $('.pokeball').removeClass('avoid-clicks');
+      }, 500);
   }
   if (matches === max_matches) {
     games_played++;

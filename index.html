@@ -6,14 +6,19 @@
   <title>Memory Match - CL</title>
   <link rel="stylesheet" href="assets\css\style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="assets/js/data.js"></script>
   <script src="assets/js/script.js"></script>
 
 
 </head>
 
 <body>
-  <header>LFZ Memory Match</header>
+  <!-- <img src='./assets/images/pokemonimages/Pokemon.png' atl='pixelAsh'> -->
+  <header>Catch'Em All</header>
 
+<!-- <button type='click' class='start'>Start</button> -->
+
+<div id='secondStage'>
   <div class="main-game-container">
     <div class='statsContainer'>
       <aside>Stats
@@ -41,96 +46,104 @@
     </div>
 
     <main>
-      <div class='container'>
+      <div class='container' id="pokemonArena">
 
         <div class='card'>
-          <div class='pokemon-card'></div>
-          <div class='css-logo'></div>
+          <div class='pokeball'></div>
+          <div class='caterpieEvo'></div>
+          <div class='caterpie'></div>
         </div>
 
         <div class='card'>
-          <div class='pokemon-card'></div>
-          <div class='css-logo'></div>
+          <div class='pokeball'></div>
+          <div class='caterpieEvo'></div>
+          <div class='butterfree'></div>
         </div>
 
         <div class='card'>
-          <div class='pokemon-card'></div>
-          <div class='docker-logo'></div>
+          <div class='pokeball'></div>
+          <div class='Lickitung'></div>
+        </div>
+
+        <div class=' card'>
+          <div class='pokeball'></div>
+          <div class='Lickitung'></div>
         </div>
 
         <div class='card'>
-          <div class='pokemon-card'></div>
-          <div class='docker-logo'></div>
+          <div class='pokeball'></div>
+          <div class='oddishEvolu'></div>
+          <div class='oddish'></div>
         </div>
 
         <div class='card'>
-          <div class='pokemon-card'></div>
-          <div class='gitHub-logo''></div>
-      </div>
+          <div class='pokeball'></div>
+          <div class='oddishEvolu'></div>
+          <div class='gloom'></div>
+        </div>
 
-      <div class=' card'>
-            <div class='pokemon-card'></div>
-            <div class='gitHub-logo'></div>
+          <div class='card'>
+            <div class='pokeball'></div>
+            <div class='jigglyEvol'></div>
+            <div class='jigglypuff'></div>
           </div>
 
           <div class='card'>
-            <div class='pokemon-card'></div>
-            <div class='html-logo'></div>
+            <div class='pokeball'></div>
+            <div class='jigglyEvol'></div>
+            <div class='wigglytuff'></div>
           </div>
 
           <div class='card'>
-            <div class='pokemon-card'></div>
-            <div class='html-logo'></div>
+            <div class='pokeball'></div>
+            <div class='farfetch'></div>
           </div>
 
           <div class='card'>
-            <div class='pokemon-card'></div>
-            <div class='js-logo'></div>
+            <div class='pokeball'></div>
+            <div class='farfetch'></div>
           </div>
 
           <div class='card'>
-            <div class='pokemon-card'></div>
-            <div class='js-logo'></div>
+            <div class='pokeball'></div>
+            <div class='exegEvol'></div>
+            <div class='exeggcute'></div>
           </div>
 
           <div class='card'>
-            <div class='pokemon-card'></div>
-            <div class='mysql-logo'></div>
+            <div class='pokeball'></div>
+            <div class='exegEvol'></div>
+            <div class='exeggutor'></div>
           </div>
 
           <div class='card'>
-            <div class='pokemon-card'></div>
-            <div class='mysql-logo'></div>
+            <div class='pokeball'></div>
+            <div class='snorlax'></div>
           </div>
 
           <div class='card'>
-            <div class='pokemon-card'></div>
-            <div class='node-logo'></div>
+            <div class='pokeball'></div>
+            <div class='snorlax'></div>
           </div>
 
           <div class='card'>
-            <div class='pokemon-card'></div>
-            <div class='node-logo'></div>
+            <div class='pokeball'></div>
+            <div class='tangela'></div>
           </div>
 
           <div class='card'>
-            <div class='pokemon-card'></div>
-            <div class='php-logo'></div>
+            <div class='pokeball'></div>
+            <div class='tangela'></div>
           </div>
 
           <div class='card'>
-            <div class='pokemon-card'></div>
-            <div class='php-logo'></div>
+            <div class='pokeball'></div>
+            <div class='scyther'></div>
           </div>
 
           <div class='card'>
-            <div class='pokemon-card'></div>
-            <div class='react-logo'></div>
-          </div>
-
-          <div class='card'>
-            <div class='pokemon-card'></div>
-            <div class='react-logo'></div>
+            <div class='pokeball'></div>
+            <div class='scyther'></div>
           </div>
 
         </div>
@@ -141,11 +154,12 @@
       <div id='modalBody'>
         <div id='modalContent'>
           Winner!
-          <button type='button' class='modalClose'>Close</button>
+          <button type='button' class='modalClose'>Play Again?</button>
         </div>
 
       </div>
   </div>
+</div>
 
 </body>
 
