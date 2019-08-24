@@ -102,22 +102,8 @@ main {
     width: 160%;
 }
 
-.butterfree {
-    background-image: url("../images/pokemonimages/Butterfree.png");
-    background-size: contain;
-    height: 190%;
-    width: 190%;
-}
-
 .oddish {
     background-image: url("../images/pokemonimages/Oddish.png");
-    background-size: contain;
-    height: 190%;
-    width: 190%;
-}
-
-.gloom {
-    background-image: url("../images/pokemonimages/Gloom.png");
     background-size: contain;
     height: 190%;
     width: 190%;
@@ -130,13 +116,6 @@ main {
     width: 160%;
 }
 
-.wigglytuff {
-    background-image: url("../images/pokemonimages/Wigglytuff.png");
-    background-size: contain;
-    height: 160%;
-    width: 160%;
-}
-
 .farfetch {
     background-image: url("../images/pokemonimages/Farfetch.png");
     background-size: contain;
@@ -144,14 +123,7 @@ main {
     width: 170%;
 }
 
-.exeggcute {
-    background-image: url("../images/pokemonimages/Exeggcute.png");
-    background-size: contain;
-    height: 160%;
-    width: 160%;
-}
-
-.exeggutor {
+.exeggcutor {
     background-image: url("../images/pokemonimages/Exeggutor.png");
     background-size: contain;
     height: 170%;
@@ -216,7 +188,7 @@ main {
 }
 
 .modalClose {
-  background-color: lightgrey;
+  background-color: yellow;
   font-size: 20px;
   border-radius: 10px;
   margin: auto;
