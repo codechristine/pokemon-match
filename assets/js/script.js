@@ -7,10 +7,10 @@ var max_matches = 9;
 var attempts = 0;
 var games_played = 0;
 // var audio = new Audio("SFX_TURN_ON_PC.wav");
-var currentRound = 0;
+var currentRound = -1;
 var rounds = [
   {
-    background: "../images/pokemonimages/viridian-forest-1.jpg",
+    background: '../images/pokemonimages/viridian-forest-1.jpg',
     pokemon: [
       { pokemonType: 'caterpie', front: 'caterpie' },
       { pokemonType: 'caterpie', front: 'caterpie' },
@@ -33,12 +33,12 @@ var rounds = [
     ]
   },
   {
-    background: "../images/pokemonimages/mtMoon.png",
+    background: '../images/pokemonimages/mtMoon.png',
     pokemon: [
       { pokemonType: 'cubone', front: 'cubone' },
       { pokemonType: 'cubone', front: 'marowak' },
       { pokemonType: 'slowpoke', front: 'slowpoke' },
-      { pokemonType: 'slowpoke', front: 'slowbrow' },
+      { pokemonType: 'slowpoke', front: 'slowbro', },
       { pokemonType: 'clefairy', front: 'clefairy' },
       { pokemonType: 'clefairy', front: 'clefable' },
       { pokemonType: 'meowth', front: 'meowth' },
@@ -50,33 +50,46 @@ var rounds = [
       { pokemonType: 'omanyte', front: 'omanyte' },
       { pokemonType: 'omanyte', front: 'omastar' },
       { pokemonType: 'abra', front: 'abra' },
-      { pokemonType: 'abra', front: 'Alakazam' },
-      // { pokemonType: 'clefairy', front: 'clefairy' },
-      // { pokemonType: 'clefairy', front: 'clefable' },
+      { pokemonType: 'abra', front: 'alakazam' },
+      { pokemonType: 'nidorina', front: 'nidorina' },
+      { pokemonType: 'nidorina', front: 'nidoqueen' },
     ]
   },
 ]
 
 function initializeApp() {
   // audio.play();
-  loadCurrentRound();
+ resetAndLoadRound();
+  $('.modalClose').click(resetGame);
   shuffleDeck();
-  $('.pokeball').on('click', handleCardClick);
-  $('.modalClose').click(function() {
-      $('#modalShadow').toggleClass('hidden');
-    $('.pokeball').toggleClass('hidden');
-      resetStats();
-      displayStats();
-  });
 }
+
+function resetAndLoadRound() {
+  currentRound++;
+  $('#pokemonArena').empty();
+  loadCurrentRound();
+  $('.pokeball').on('click', handleCardClick);
+}
+
+function resetGame() {
+  $('#modalShadow').toggleClass('hidden');
+  $('.pokeball').toggleClass('hidden');
+  resetStats();
+  displayStats();
+  resetAndLoadRound();
+  shuffleDeck();
+}
+
 
 function loadCurrentRound() {
   var background = rounds[currentRound].background;
   var cards = rounds[currentRound].pokemon;
   $('#pokemonArena').empty();
+  $('body').css('background');
     for( var pokeI = 0; pokeI < cards.length; pokeI++){
     var currentCard = cards[pokeI];
-    addCardToGameArea( currentCard.front, currentCard.pokemonType);
+    var currentBackground = background[pokeI];
+      addCardToGameArea(currentCard.front, currentCard.pokemonType, currentBackground.background);
     }
 }
 
@@ -99,10 +112,6 @@ function allCardsAreMatched() {
   if (matches == max_matches)
     $('#modalShadow').removeClass();
 }
-  // $('.modal-footer').on('click', function(){
-  // $('.modal-footer'.addClass('hidden'))
-  // })
-
 
 function clickedCard() {
   if (firstCardClicked == null) {
@@ -112,10 +121,8 @@ function clickedCard() {
   secondCardClicked = $(event.currentTarget);
 
   var urlFirstCard = firstCardClicked.attr('data-pokemon');
-// var urlFirstCard = firstCardClicked.siblings().css('background-image');
   console.log(urlFirstCard);
   var urlSecondCard = secondCardClicked.attr('data-pokemon');
-// var urlSecondCard = secondCardClicked.siblings().css('background-image');
   console.log(urlSecondCard);
 
     if (urlFirstCard === urlSecondCard) {
@@ -149,7 +156,6 @@ function clickedCard() {
     games_played++;
     displayStats();
     resetStats();
-    shuffleDeck();
   }
 }
 
@@ -169,24 +175,24 @@ function resetStats() {
   attempts = 0;
 }
 
-// function shuffleDeck(pokemon) {
-//   var randomNumber;
-//   var arrayLength = pokemon.length - 1
-//   var spotHolder;
-//   for (var i = 0; i < arrayLength; i++) {
-//     randomNumber = Math.floor(Math.random() * (pokemon.length));
-//     spotHolder = pokemon[i];
-//     pokemon[i] = pokemon[randomNumber];
-//     pokemon[randomNumber] = spotHolder;
-//   }
-//   return pokemon;
-// }
-
-function shuffleDeck() {
-  for (var i = 0, i < rounds.pokemon[pokemonType], i++) {
-    randomNumber = Math.floor(Math.random() * rounds.pokemon[pokemonType]);
+function shuffleDeck(pokemon) {
+  var randomNumber;
+  var arrayLength = pokemon.length - 1
+  var spotHolder;
+  for (var i = 0; i < arrayLength; i++) {
+    randomNumber = Math.floor(Math.random() * pokemon.length);
+    spotHolder = pokemonrd[i];
+    pokemon[i] = pokemon[randomNumber];
+    pokemon[randomNumber] = spotHolder;
   }
-  return rounds.pokemon[pokemonType];
+  return card;
 }
+
+// function shuffleDeck(rounds) {
+//   for (var i = 0; i < rounds.length; i++) {
+//     var randomNumber = Math.floor(Math.random() * rounds.length);
+//   }
+//   return randomNumber;
+// }
 
   // $('.modalClose').on('click', loadCurrentRound());

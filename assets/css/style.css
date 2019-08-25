@@ -1,19 +1,5 @@
-/* img {
-    display: flex;
-    justify-items: space-around;
-} */
 
-header {
-    padding: 10px 10px;
-    text-align: center;
-    border: solid black;
-    font-size: 40px;
-    border-radius: 10px;
-    color: white;
-    text-shadow: 3px 2px royalblue;
-}
-
-body {
+body{
     background-image: url("../images/pokemonimages/viridian-forest-1.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -31,6 +17,11 @@ body {
     height: 620px;
     text-align: center;
     flex-direction: column;
+    margin-top: 60px;
+}
+
+.statsTitle {
+    font-weight: bold;
 }
 
 .gamesPlayed,
@@ -39,6 +30,9 @@ body {
 .attemptNum,
 .gamesAccuracy,
 .accuracyNum {
+    background: white;
+    opacity: 0.6;
+    font-weight: bold;
     border: solid black;
     border-radius: 5px;
     width: 150px;
@@ -52,7 +46,6 @@ main {
     width: 90%;
     display: flex;
     justify-content: space-around;
-    margin-top: 2px;
     margin-left: 5px;
 }
 
@@ -102,12 +95,14 @@ main {
     width: 160%;
 }
 
+
 .oddish {
     background-image: url("../images/pokemonimages/Oddish.png");
     background-size: contain;
     height: 190%;
     width: 190%;
 }
+
 
 .jigglypuff {
     background-image: url("../images/pokemonimages/Jigglypuff.png");
@@ -126,8 +121,8 @@ main {
 .exeggcutor {
     background-image: url("../images/pokemonimages/Exeggutor.png");
     background-size: contain;
-    height: 170%;
-    width: 170%;
+    height: 200%;
+    width: 200%;
 }
 
 .snorlax {
@@ -149,6 +144,134 @@ main {
     background-size: contain;
     height: 190%;
     width: 190%;
+}
+
+.cubone {
+    background-image: url("../images/pokemonimages/Cubone.png");
+    background-size: contain;
+    height: 170%;
+    width: 170%;
+    margin-top: 20px;
+}
+
+.marowak {
+    background-image: url("../images/pokemonimages/Marowak.png");
+    background-size: contain;
+    height: 180%;
+    width: 180%;
+    margin-top: 10px;
+}
+
+.slowpoke {
+    background-image: url("../images/pokemonimages/Slowpoke.png");
+    background-size: contain;
+    height: 190%;
+    width: 190%;
+}
+
+.slowbro {
+    background-image: url("../images/pokemonimages/Slowbro.png");
+    background-size: contain;
+    height: 165%;
+    width: 165%;
+}
+
+.clefairy {
+    background-image: url("../images/pokemonimages/Clefairy.png");
+    background-size: contain;
+    height: 170%;
+    width: 170%;
+}
+
+.clefable {
+    background-image: url("../images/pokemonimages/clefable.png");
+    background-size: contain;
+    height: 170%;
+    width: 170%;
+}
+
+.meowth {
+    background-image: url("../images/pokemonimages/Meowth.png");
+    background-size: contain;
+    height: 190%;
+    width: 190%;
+}
+
+.persian {
+    background-image: url("../images/pokemonimages/Persian.png");
+    background-size: contain;
+    height: 180%;
+    width: 180%;
+}
+
+.kabuto {
+    background-image: url("../images/pokemonimages/Kabuto.png");
+    background-size: contain;
+    height: 160%;
+    width: 160%;
+}
+
+.kabutops {
+    background-image: url("../images/pokemonimages/Kabutops.png");
+    background-size: contain;
+    height: 190%;
+    width: 190%;
+}
+
+.gastly {
+    background-image: url("../images/pokemonimages/Gastly.png");
+    background-size: contain;
+    height: 160%;
+    width: 160%;
+}
+
+.gengar {
+    background-image: url("../images/pokemonimages/Gengar.png");
+    background-size: contain;
+    height: 180%;
+    width: 180%;
+}
+
+.omanyte {
+    background-image: url("../images/pokemonimages/omanyte.png");
+    background-size: contain;
+    height: 170%;
+    width: 170%;
+}
+
+.omastar {
+    background-image: url("../images/pokemonimages/omastar.png");
+    background-size: contain;
+    height: 180%;
+    width: 180%;
+}
+
+.abra {
+    background-image: url("../images/pokemonimages/Abra.png");
+    background-size: contain;
+    height: 180%;
+    width: 180%;
+}
+
+.alakazam {
+    background-image: url("../images/pokemonimages/Alakazam.png");
+    background-size: contain;
+    height: 190%;
+    width: 190%;
+}
+
+.nidorina {
+    background-image: url("../images/pokemonimages/Nidorina.png");
+    background-size: contain;
+    height: 170%;
+    width: 170%;
+}
+
+.nidoqueen {
+    background-image: url("../images/pokemonimages/Nidoqueen.png");
+    background-size: contain;
+    height: 170%;
+    width: 170%;
 }
 
 .hidden {
@@ -188,7 +311,7 @@ main {
 }
 
 .modalClose {
-  background-color: yellow;
+  background-color: lightgray;
   font-size: 20px;
   border-radius: 10px;
   margin: auto;
