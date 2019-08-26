@@ -3,13 +3,13 @@ $(document).ready(initializeApp);
 var firstCardClicked = null;
 var secondCardClicked = null;
 var matches = null;
-var max_matches = 9;
+var max_matches = 2;
 var attempts = 0;
 var games_played = 0;
 var currentRound = -1;
 var rounds = [
   {
-    background: '../images/pokemonimages/viridian-forest-1.jpg',
+    background: 'assets/images/pokemonimages/viridian-forest-1.jpg',
     pokemon: [
       { pokemonType: 'caterpie', front: 'caterpie' },
       { pokemonType: 'caterpie', front: 'caterpie' },
@@ -32,7 +32,7 @@ var rounds = [
     ]
   },
   {
-    background: '../images/pokemonimages/mtMoon.png',
+    background: 'assets/images/pokemonimages/mtMoon.png',
     pokemon: [
       { pokemonType: 'cubone', front: 'cubone' },
       { pokemonType: 'cubone', front: 'marowak' },
@@ -54,30 +54,15 @@ var rounds = [
       { pokemonType: 'nidorina', front: 'nidoqueen' },
     ]
   },
+  {
+    background: 'assets/images/pokemonimages/pikaIntro.gif',
+  },
 ]
 
 function initializeApp() {
  resetAndLoadRound();
-//  openingScene();
   $('.modalClose').click(resetGame);
 }
-
-// function openingScene() {
-//   var gameTitleContainer = $('<div>').addClass('gameTitleContainer');
-//   var gameTitle = $('<h1>').addClass('gameTitle').text("CATCH 'EM ALL!");
-//   var playGameButton = $('<button>').addClass('playGame').text('PLAY');
-//   var audio = new Audio("SFX_TURN_ON_PC.wav");
-//   var img = $('<img id="dynamic">');
-//   $(gameTitleContainer).append(gameTitle, playGameButton, audio, img);
-//   $('body').append(gameTitleContainer);
-//   audio.play();
-
-//   playGameButton.on('click', beginGame);
-//     function beginGame() {
-//       $('body').empty();
-//     }
-// }
-
 
 function resetAndLoadRound() {
   currentRound++;
@@ -98,7 +83,7 @@ function loadCurrentRound() {
   var background = rounds[currentRound].background;
   var cards = rounds[currentRound].pokemon;
   $('#pokemonArena').empty();
-  $('body').css('background-image', "");
+  $('body').css('background-image', `url(${background})`);
     for( var pokeI = 0; pokeI < cards.length; pokeI++){
     var currentCard = cards[pokeI];
     var currentBackground = background[pokeI];
@@ -169,8 +154,8 @@ function clickedCard() {
     games_played++;
     displayStats();
     resetStats();
-    $('.dialogue').text('Round #2 > Match the Pokemon and Their Evolution');
-    $('body').css('background-image', 'url("../images/pokemonimages/mtMoon.png")');
+    $('.dialogue').text('Round #2 Match the Pokemon and Their Evolution');
+    $('#rocket').removeClass('hidden');
   }
 }
 
@@ -189,14 +174,3 @@ function resetStats() {
   matches = null;
   attempts = 0;
 }
-
-// function shuffleDeck(rounds) {
-//   var randomNumber = null;
-//   var arrayLength = pokemon.length - 1
-//   var j = 0;
-//   for (var i = 0; i = arrayLength; i > 0 ; i -=1) {
-//     j = Math.floor(Math.random() * (i +1));
-//     randomNumber = pokemon[j];
-//     array[j] = randomNumber;
-//   }
-// }

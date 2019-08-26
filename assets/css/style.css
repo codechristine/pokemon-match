@@ -1,6 +1,5 @@
 
 body{
-    background-image: url("../images/pokemonimages/viridian-forest-1.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -20,24 +19,34 @@ body{
     margin-top: 40px;
 }
 
+#pikaIntro {
+    height: 300px;
+    width: 300px;
+}
 
 img {
     height: 300px;
     width: 300px;
 }
 
+#rocket {
+    float: right;
+    height: 115px;
+    width: 120px;
+}
+
 .dialogue {
     float: right;
-        display: flex;
+    display: flex;
     position: static;
     background-color: white;
     opacity: 0.6;
     border: 5px solid black;
     border-style: double;
     margin: 50px;
-    margin-right: 300px;
+    margin-right: 200px;
     padding: 55px;
-    font-size: 30px;
+    font-size: 40px;
 }
 
 .statsTitle {
