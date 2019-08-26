@@ -6,7 +6,6 @@ var matches = null;
 var max_matches = 9;
 var attempts = 0;
 var games_played = 0;
-// var audio = new Audio("SFX_TURN_ON_PC.wav");
 var currentRound = -1;
 var rounds = [
   {
@@ -58,11 +57,27 @@ var rounds = [
 ]
 
 function initializeApp() {
-  // audio.play();
  resetAndLoadRound();
+//  openingScene();
   $('.modalClose').click(resetGame);
-  shuffleDeck();
 }
+
+// function openingScene() {
+//   var gameTitleContainer = $('<div>').addClass('gameTitleContainer');
+//   var gameTitle = $('<h1>').addClass('gameTitle').text("CATCH 'EM ALL!");
+//   var playGameButton = $('<button>').addClass('playGame').text('PLAY');
+//   var audio = new Audio("SFX_TURN_ON_PC.wav");
+//   var img = $('<img id="dynamic">');
+//   $(gameTitleContainer).append(gameTitle, playGameButton, audio, img);
+//   $('body').append(gameTitleContainer);
+//   audio.play();
+
+//   playGameButton.on('click', beginGame);
+//     function beginGame() {
+//       $('body').empty();
+//     }
+// }
+
 
 function resetAndLoadRound() {
   currentRound++;
@@ -77,15 +92,13 @@ function resetGame() {
   resetStats();
   displayStats();
   resetAndLoadRound();
-  shuffleDeck();
 }
-
 
 function loadCurrentRound() {
   var background = rounds[currentRound].background;
   var cards = rounds[currentRound].pokemon;
   $('#pokemonArena').empty();
-  $('body').css('background');
+  // $('body').css('background-image', "");
     for( var pokeI = 0; pokeI < cards.length; pokeI++){
     var currentCard = cards[pokeI];
     var currentBackground = background[pokeI];
@@ -112,6 +125,7 @@ function allCardsAreMatched() {
   if (matches == max_matches)
     $('#modalShadow').removeClass();
 }
+
 
 function clickedCard() {
   if (firstCardClicked == null) {
@@ -156,6 +170,8 @@ function clickedCard() {
     games_played++;
     displayStats();
     resetStats();
+    $('.dialogue').text('Round #2 > Match the Pokemon and Their Evolution');
+    $('body').css('background-image', 'url("../images/pokemonimages/mtMoon.png")');
   }
 }
 
@@ -175,24 +191,13 @@ function resetStats() {
   attempts = 0;
 }
 
-function shuffleDeck(pokemon) {
-  var randomNumber;
-  var arrayLength = pokemon.length - 1
-  var spotHolder;
-  for (var i = 0; i < arrayLength; i++) {
-    randomNumber = Math.floor(Math.random() * pokemon.length);
-    spotHolder = pokemonrd[i];
-    pokemon[i] = pokemon[randomNumber];
-    pokemon[randomNumber] = spotHolder;
-  }
-  return card;
-}
-
 // function shuffleDeck(rounds) {
-//   for (var i = 0; i < rounds.length; i++) {
-//     var randomNumber = Math.floor(Math.random() * rounds.length);
+//   var randomNumber = null;
+//   var arrayLength = pokemon.length - 1
+//   var j = 0;
+//   for (var i = 0; i = arrayLength; i > 0 ; i -=1) {
+//     j = Math.floor(Math.random() * (i +1));
+//     randomNumber = pokemon[j];
+//     array[j] = randomNumber;
 //   }
-//   return randomNumber;
 // }
-
-  // $('.modalClose').on('click', loadCurrentRound());

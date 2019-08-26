@@ -5,6 +5,13 @@ body{
     background-size: cover;
 }
 
+/* #introduction {
+  background-color: lightgray;
+  font-size: 20px;
+  border-radius: 10px;
+  margin: auto;
+} */
+
 .main-game-container {
   display: flex;
 }
@@ -14,10 +21,30 @@ body{
     border-radius: 10px;
     font-size: 20px;
     width: 180px;
-    height: 620px;
+    height: 460px;
     text-align: center;
     flex-direction: column;
-    margin-top: 60px;
+    margin-top: 40px;
+}
+
+
+img {
+    height: 300px;
+    width: 300px;
+}
+
+.dialogue {
+    float: right;
+        display: flex;
+    position: static;
+    background-color: white;
+    opacity: 0.6;
+    border: 5px solid black;
+    border-style: double;
+    margin: 50px;
+    margin-right: 300px;
+    padding: 55px;
+    font-size: 30px;
 }
 
 .statsTitle {
@@ -49,7 +76,7 @@ main {
     margin-left: 5px;
 }
 
-.container {
+#pokemonArena {
     width: 90%;
     display: flex;
     flex-wrap: wrap;
@@ -78,6 +105,51 @@ main {
 .pokeball:hover {
     transform: scale(1.5);
     z-index: 1;
+}
+
+.hidden {
+    display: none;
+}
+
+.avoid-clicks {
+  pointer-events: none;
+}
+
+#modalShadow {
+  background-color: rgba(0,0,0,.4);
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+}
+
+#modalBody {
+  background-color: white;
+  height: 50vh;
+  width: 50vw;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+}
+
+#modalContent {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+}
+
+.modalClose {
+  background-color: lightgray;
+  font-size: 20px;
+  border-radius: 10px;
+  margin: auto;
+  display: block;
+  margin-top: 20px;
 }
 
 .caterpie {
@@ -272,49 +344,4 @@ main {
     background-size: contain;
     height: 170%;
     width: 170%;
-}
-
-.hidden {
-    display: none;
-}
-
-.avoid-clicks {
-  pointer-events: none;
-}
-
-#modalShadow {
-  background-color: rgba(0,0,0,.4);
-  height: 100vh;
-  width: 100vw;
-  position: fixed;
-  left: 0px;
-  top: 0px;
-}
-
-#modalBody {
-  background-color: white;
-  height: 50vh;
-  width: 50vw;
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 10px;
-}
-
-#modalContent {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 100px;
-}
-
-.modalClose {
-  background-color: lightgray;
-  font-size: 20px;
-  border-radius: 10px;
-  margin: auto;
-  display: block;
-  margin-top: 20px;
 }
