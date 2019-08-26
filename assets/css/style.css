@@ -5,13 +5,6 @@ body{
     background-size: cover;
 }
 
-/* #introduction {
-  background-color: lightgray;
-  font-size: 20px;
-  border-radius: 10px;
-  margin: auto;
-} */
-
 .main-game-container {
   display: flex;
 }

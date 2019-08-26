@@ -98,7 +98,7 @@ function loadCurrentRound() {
   var background = rounds[currentRound].background;
   var cards = rounds[currentRound].pokemon;
   $('#pokemonArena').empty();
-  // $('body').css('background-image', "");
+  $('body').css('background-image', "");
     for( var pokeI = 0; pokeI < cards.length; pokeI++){
     var currentCard = cards[pokeI];
     var currentBackground = background[pokeI];
@@ -125,7 +125,6 @@ function allCardsAreMatched() {
   if (matches == max_matches)
     $('#modalShadow').removeClass();
 }
-
 
 function clickedCard() {
   if (firstCardClicked == null) {
