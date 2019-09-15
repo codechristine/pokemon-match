@@ -55,18 +55,43 @@ var rounds = [
     ]
   },
   {
+    background: 'assets/images/pokemonimages/seafoamIsland.png',
+    pokemon: [
+      { pokemonType: 'psyduck', front: 'psyduck' },
+      { pokemonType: 'psyduck', front: 'golduck' },
+      { pokemonType: 'poliwag', front: 'poliwag' },
+      { pokemonType: 'poliwag', front: 'poliwhirl', },
+      { pokemonType: 'tentacool', front: 'tentacool' },
+      { pokemonType: 'tentacool', front: 'tentacruel' },
+      { pokemonType: 'seel', front: 'seel' },
+      { pokemonType: 'seel', front: 'dewgong' },
+      { pokemonType: 'shellder', front: 'shellder' },
+      { pokemonType: 'shellder', front: 'cloyster' },
+      { pokemonType: 'krabby', front: 'krabby' },
+      { pokemonType: 'krabby', front: 'kingler' },
+      { pokemonType: 'horsea', front: 'horsea' },
+      { pokemonType: 'horsea', front: 'seadra' },
+      { pokemonType: 'staryu', front: 'staryu' },
+      { pokemonType: 'staryu', front: 'starmie' },
+      { pokemonType: 'magikarp', front: 'magikarp' },
+      { pokemonType: 'magikarp', front: 'gyarados' },
+    ]
+  },
+  {
     background: 'assets/images/pokemonimages/pikaIntro.gif',
   },
 ]
 
 function initializeApp() {
- resetAndLoadRound();
+  resetAndLoadRound();
+  // shuffle();
   $('.modalClose').click(resetGame);
 }
 
 function resetAndLoadRound() {
   currentRound++;
   $('#pokemonArena').empty();
+  // shuffle();
   loadCurrentRound();
   $('.pokeball').on('click', handleCardClick);
 }
@@ -77,7 +102,17 @@ function resetGame() {
   resetStats();
   displayStats();
   resetAndLoadRound();
+  // shuffle();
 }
+
+// function shuffle(){
+//   for(var i = rounds[currentRound].pokemon.length -1; i > 0; i--){
+//     var randomPosition = Math.floor(Math.random() * i);
+//     var temp = rounds[currentRound].pokemon[i];
+//     rounds[currentRound].pokemon[i] = rounds[currentRound].pokemon[randomPosition];
+//     rounds[currentRound].pokemon[randomPosition] = temp;
+//   }
+// }
 
 function loadCurrentRound() {
   var background = rounds[currentRound].background;
