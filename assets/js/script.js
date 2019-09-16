@@ -32,7 +32,7 @@ var rounds = [
     ]
   },
   {
-    background: 'assets/images/pokemonimages/mtMoon.png',
+    background: 'assets/images/pokemonimages/mtMoonRev2.png',
     pokemon: [
       { pokemonType: 'cubone', front: 'cubone' },
       { pokemonType: 'cubone', front: 'marowak' },
@@ -84,16 +84,17 @@ var rounds = [
 
 function initializeApp() {
   resetAndLoadRound();
-  // shuffle();
+  shuffle();
   $('.modalClose').click(resetGame);
 }
 
 function resetAndLoadRound() {
   currentRound++;
   $('#pokemonArena').empty();
-  // shuffle();
+  shuffle();
   loadCurrentRound();
   $('.pokeball').on('click', handleCardClick);
+  $('#rocket').addClass('hidden')
 }
 
 function resetGame() {
@@ -102,24 +103,24 @@ function resetGame() {
   resetStats();
   displayStats();
   resetAndLoadRound();
-  // shuffle();
+  shuffle();
 }
 
-// function shuffle(){
-//   for(var i = rounds[currentRound].pokemon.length -1; i > 0; i--){
-//     var randomPosition = Math.floor(Math.random() * i);
-//     var temp = rounds[currentRound].pokemon[i];
-//     rounds[currentRound].pokemon[i] = rounds[currentRound].pokemon[randomPosition];
-//     rounds[currentRound].pokemon[randomPosition] = temp;
-//   }
-// }
+function shuffle(){
+  for(var i = rounds[currentRound].pokemon.length -1; i > 0; i--){
+    var randomPosition = Math.floor(Math.random() * i);
+    var temp = rounds[currentRound].pokemon[i];
+    rounds[currentRound].pokemon[i] = rounds[currentRound].pokemon[randomPosition];
+    rounds[currentRound].pokemon[randomPosition] = temp;
+  }
+}
 
 function loadCurrentRound() {
   var background = rounds[currentRound].background;
   var cards = rounds[currentRound].pokemon;
   $('#pokemonArena').empty();
   $('body').css('background-image', `url(${background})`);
-    for( var pokeI = 0; pokeI < cards.length; pokeI++){
+    for (var pokeI = 0; pokeI < cards.length; pokeI++){
     var currentCard = cards[pokeI];
     var currentBackground = background[pokeI];
       addCardToGameArea(currentCard.front, currentCard.pokemonType, currentBackground.background);
@@ -189,9 +190,12 @@ function clickedCard() {
     games_played++;
     displayStats();
     resetStats();
-    $('.dialogue').text('Round #2 Match the Pokemon and Their Evolution');
-    $('#rocket').removeClass('hidden');
+    updateText();
   }
+}
+
+function updateText(){
+    $('.dialogue').text('Match the Pokemon & their Evolution');
 }
 
 function displayStats() {

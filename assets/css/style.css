@@ -15,18 +15,12 @@ body{
     flex-direction: column;
     margin-top: 40px;
 }
-#pikaIntro {
+/* #pikaIntro{
+    margin: auto;
+    width: 100%;
+} */
+.ash {
     height: 300px;
-    width: 300px;
-}
-img {
-    height: 300px;
-    width: 300px;
-}
-#rocket {
-    float: right;
-    height: 115px;
-    width: 120px;
 }
 .dialogue {
     float: right;
@@ -36,9 +30,9 @@ img {
     opacity: 0.6;
     border: 5px solid black;
     border-style: double;
-    margin: 50px;
-    margin-right: 200px;
-    padding: 55px;
+    margin: 65px;
+    margin-right: 250px;;
+    padding: 45px;
     font-size: 40px;
 }
 .statsTitle {
