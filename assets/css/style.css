@@ -1,100 +1,162 @@
-body{
-    background-repeat: no-repeat;
+body {
     background-size: cover;
+    background-repeat: no-repeat;
 }
-.main-game-container {
-  display: flex;
+
+body::after {
+    position: absolute;
+    content: "";
+    background: white;
+    background-size: cover;
+    opacity: 0.4;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
 }
-.statsContainer {
-    margin-top: 15px;
-    border-radius: 10px;
-    font-size: 20px;
-    width: 180px;
-    height: 460px;
+
+.game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stats-container {
+    /* display: flex;
+    align-items: flex-start; */
     text-align: center;
     flex-direction: column;
-    margin-top: 40px;
+    /* border-radius: 10px; */
+    font-size: 1.2rem;
+    /* width: 180px; */
+    /* height: 460px; */
+    margin-top: -1%;
+    /* margin-top: 40px; */
+    margin-left: 2%;
 }
+
 /* #pikaIntro{
     margin: auto;
     width: 100%;
 } */
-.ash {
-    height: 300px;
-}
-.dialogue {
-    float: right;
-    display: flex;
-    position: static;
-    background-color: white;
-    opacity: 0.6;
-    border: 5px solid black;
-    border-style: double;
-    margin: 65px;
-    margin-right: 250px;;
-    padding: 45px;
-    font-size: 40px;
-}
-.statsTitle {
+
+.stats-title {
+    font-size: 2rem;
     font-weight: bold;
 }
-.gamesPlayed,
-.playedNum,
-.gameAttempt,
-.attemptNum,
-.gamesAccuracy,
-.accuracyNum {
-    background: white;
-    opacity: 0.6;
-    font-weight: bold;
-    border: solid black;
-    border-radius: 5px;
-    width: 150px;
-    height: 50px;
+
+.games-played,
+.played-num,
+.games-attempt,
+.attempt-num,
+.games-accuracy,
+.accuracy-num {
+    background: #F7F7F7;
+    width: 10rem;
+    margin: 2%;
     text-align: center;
     line-height: 3.2rem;
-    margin: 5px auto;
+    /* opacity: 0.6; */
+    font-weight: bold;
+    border: 2px solid black;
+    border-radius: 10px;
+    /* width: 150px;
+    height: 50px; */
 }
+
 main {
-    width: 90%;
     display: flex;
     justify-content: space-around;
-    margin-left: 5px;
+    width: 80%;
+    /* margin-left: 5px; */
 }
-#pokemonArena {
-    width: 90%;
+
+.pokemon-arena {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-content: space-around;
+    width: 80%;
+    /* margin-right: 3%; */
 }
+
 .card {
   position: relative;
   background-size: cover;
-  height: 90px;
+  /* height: 90px;
   width: 10%;
-  padding: 30px;
+  padding: 30px; */
+  height: 6rem;
+  width: 6rem;
+  padding: 3%;
 }
+
 .pokeball {
-    background-image: url("../images/pokemonimages/poke-ball-revision2.png");
-    background-size: cover;
-    height: 110%;
-    width: 100%;
-    box-sizing: border-box;
     position: absolute;
+    box-sizing: border-box;
+    background-image: url("../images/main-images/pokeball.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 113%;
+    width: 113%;
     transition: transform .2s;
 }
+
 .pokeball:hover {
     transform: scale(1.5);
     z-index: 1;
+    cursor: pointer;
 }
+
+.content-bottom {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.ash {
+    height: 20rem;
+    /* height: 300px; */
+}
+
+/* .dialogue-box {
+    position: absolute;
+    height: 90%;
+} */
+
+.dialogue {
+    /* display: flex; */
+    /* position: static; */
+    /* float: right; */
+    background-color: #F7F7F7;
+    font-size: 40px;
+    font-size: 2rem;
+    width: 32%;
+    text-align: center;
+    /* opacity: 0.6; */
+    border-radius: 10px;
+    border: 5px solid black;
+    border-style: double;
+    /* margin: 65px; */
+    margin: 4%;
+    margin-top: 4%;
+    margin-right: 25%;
+    padding: 2%;
+    /* z-index: 1; */
+    /* margin-right: 250px; */
+    /* padding: 45px; */
+}
+
 .hidden {
     display: none;
 }
+
 .avoid-clicks {
   pointer-events: none;
 }
-#modalShadow {
+
+#modal-shadow {
   background-color: rgba(0,0,0,.4);
   height: 100vh;
   width: 100vw;
@@ -102,302 +164,354 @@ main {
   left: 0px;
   top: 0px;
 }
-#modalBody {
+
+#modal-body {
+  position: fixed;
   background-color: white;
   height: 50vh;
   width: 50vw;
-  position: fixed;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   border-radius: 10px;
+  border: 7px solid black;
+  border-style: double;
 }
-#modalContent {
+
+#modal-content {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  font-size: 50px;
+  font-size: 4rem;
 }
-.modalClose {
-  background-color: lightgray;
-  font-size: 20px;
-  border-radius: 10px;
-  margin: auto;
-  display: block;
-  margin-top: 20px;
+
+#modal-next {
+  /* background-color: lightgray; */
+  font-size: 1.5rem;
+  /* border-radius: 10px; */
+  /* margin: auto;
+  display: block; */
+  margin-top: 20%;
+  text-align: end;
+  cursor: pointer;
 }
+
 .caterpie {
-    background-image: url("../images/pokemonimages/Caterpie.png");
+    background-image: url("../images/pokemon-images/caterpie.png");
     background-size: contain;
     height: 140%;
     width: 140%;
     margin-top: 30px;
 }
+
 .Lickitung {
-    background-image: url("../images/pokemonimages/Lickitung.png");
+    background-image: url("../images/pokemon-images/lickitung.png");
     background-size: contain;
     height: 160%;
     width: 160%;
 }
+
 .oddish {
-    background-image: url("../images/pokemonimages/Oddish.png");
+    background-image: url("../images/pokemon-images/oddish.png");
     background-size: contain;
     height: 190%;
     width: 190%;
 }
+
 .jigglypuff {
-    background-image: url("../images/pokemonimages/Jigglypuff.png");
+    background-image: url("../images/pokemon-images/jigglypuff.png");
     background-size: contain;
     height: 160%;
     width: 160%;
 }
+
 .farfetch {
-    background-image: url("../images/pokemonimages/Farfetch.png");
+    background-image: url("../images/pokemon-images/farfetch.png");
     background-size: contain;
     height: 170%;
     width: 170%;
 }
+
 .exeggcutor {
-    background-image: url("../images/pokemonimages/Exeggutor.png");
+    background-image: url("../images/pokemon-images/exeggutor.png");
     background-size: contain;
     height: 200%;
     width: 200%;
 }
+
 .snorlax {
-    background-image: url("../images/pokemonimages/Snorlax.png");
+    background-image: url("../images/pokemon-images/snorlax.png");
     background-size: contain;
     height: 180%;
     width: 180%;
 }
+
 .tangela {
-    background-image: url("../images/pokemonimages/Tangela.png");
+    background-image: url("../images/pokemon-images/tangela.png");
     background-size: contain;
     height: 160%;
     width: 160%;
 }
+
 .scyther {
-    background-image: url("../images/pokemonimages/Scyther.png");
+    background-image: url("../images/pokemon-images/scyther.png");
     background-size: contain;
     height: 190%;
     width: 190%;
 }
+
 .cubone {
-    background-image: url("../images/pokemonimages/Cubone.png");
+    background-image: url("../images/pokemon-images/cubone.png");
     background-size: contain;
     height: 170%;
     width: 170%;
     margin-top: 20px;
 }
+
 .marowak {
-    background-image: url("../images/pokemonimages/Marowak.png");
+    background-image: url("../images/pokemon-images/marowak.png");
     background-size: contain;
     height: 180%;
     width: 180%;
     margin-top: 10px;
 }
+
 .slowpoke {
-    background-image: url("../images/pokemonimages/Slowpoke.png");
+    background-image: url("../images/pokemon-images/slowpoke.png");
     background-size: contain;
     height: 190%;
     width: 190%;
 }
+
 .slowbro {
-    background-image: url("../images/pokemonimages/Slowbro.png");
+    background-image: url("../images/pokemon-images/slowbro.png");
     background-size: contain;
     height: 165%;
     width: 165%;
 }
+
 .clefairy {
-    background-image: url("../images/pokemonimages/Clefairy.png");
+    background-image: url("../images/pokemon-images/clefairy.png");
     background-size: contain;
     height: 170%;
     width: 170%;
 }
+
 .clefable {
-    background-image: url("../images/pokemonimages/clefable.png");
+    background-image: url("../images/pokemon-images/clefable.png");
     background-size: contain;
     height: 170%;
     width: 170%;
 }
+
 .meowth {
-    background-image: url("../images/pokemonimages/Meowth.png");
+    background-image: url("../images/pokemon-images/meowth.png");
     background-size: contain;
     height: 190%;
     width: 190%;
 }
+
 .persian {
-    background-image: url("../images/pokemonimages/Persian.png");
+    background-image: url("../images/pokemon-images/persian.png");
     background-size: contain;
     height: 180%;
     width: 180%;
 }
+
 .kabuto {
-    background-image: url("../images/pokemonimages/Kabuto.png");
+    background-image: url("../images/pokemon-images/kabuto.png");
     background-size: contain;
     height: 160%;
     width: 160%;
 }
+
 .kabutops {
-    background-image: url("../images/pokemonimages/Kabutops.png");
+    background-image: url("../images/pokemon-images/kabutops.png");
     background-size: contain;
     height: 190%;
     width: 190%;
 }
+
 .gastly {
-    background-image: url("../images/pokemonimages/Gastly.png");
+    background-image: url("../images/pokemon-images/gastly.png");
     background-size: contain;
     height: 160%;
     width: 160%;
 }
+
 .gengar {
-    background-image: url("../images/pokemonimages/Gengar.png");
+    background-image: url("../images/pokemon-images/gengar.png");
     background-size: contain;
     height: 180%;
     width: 180%;
 }
+
 .omanyte {
-    background-image: url("../images/pokemonimages/omanyte.png");
+    background-image: url("../images/pokemon-images/omanyte.png");
     background-size: contain;
     height: 170%;
     width: 170%;
 }
+
 .omastar {
-    background-image: url("../images/pokemonimages/omastar.png");
+    background-image: url("../images/pokemon-images/omastar.png");
     background-size: contain;
     height: 180%;
     width: 180%;
 }
+
 .abra {
-    background-image: url("../images/pokemonimages/Abra.png");
+    background-image: url("../images/pokemon-images/abra.png");
     background-size: contain;
     height: 180%;
     width: 180%;
 }
+
 .alakazam {
-    background-image: url("../images/pokemonimages/Alakazam.png");
+    background-image: url("../images/pokemon-images/alakazam.png");
     background-size: contain;
     height: 190%;
     width: 190%;
 }
+
 .nidorina {
-    background-image: url("../images/pokemonimages/Nidorina.png");
+    background-image: url("../images/pokemon-images/nidorina.png");
     background-size: contain;
     height: 170%;
     width: 170%;
 }
+
 .nidoqueen {
-    background-image: url("../images/pokemonimages/Nidoqueen.png");
+    background-image: url("../images/pokemon-images/nidoqueen.png");
     background-size: contain;
     height: 170%;
     width: 170%;
 }
+
 .psyduck {
-    background-image: url("../images/pokemonimages/psyduck.png");
+    background-image: url("../images/pokemon-images/psyduck.png");
     background-size: contain;
     height: 170%;
     width: 170%;
 }
+
 .golduck {
-    background-image: url("../images/pokemonimages/golduck.png");
+    background-image: url("../images/pokemon-images/golduck.png");
     background-size: contain;
     height: 180%;
     width: 180%;
 }
+
 .poliwag{
-    background-image: url("../images/pokemonimages/poliwag.png");
+    background-image: url("../images/pokemon-images/poliwag.png");
     background-size: contain;
     height: 160%;
     width: 160%;
 }
+
 .poliwhirl {
-    background-image: url("../images/pokemonimages/poliwhirl.png");
+    background-image: url("../images/pokemon-images/poliwhirl.png");
     background-size: contain;
     height: 170%;
     width: 170%;
 }
+
 .tentacool{
-    background-image: url("../images/pokemonimages/tentacool.png");
+    background-image: url("../images/pokemon-images/tentacool.png");
     background-size: contain;
     height: 160%;
     width: 160%;
 }
+
 .tentacruel {
-    background-image: url("../images/pokemonimages/tentacruel.png");
+    background-image: url("../images/pokemon-images/tentacruel.png");
     background-size: contain;
     height: 180%;
     width: 180%;
 }
+
 .seel {
-    background-image: url("../images/pokemonimages/seel.png");
+    background-image: url("../images/pokemon-images/seel.png");
     background-size: contain;
     height: 160%;
     width: 160%;
 }
+
 .dewgong {
-    background-image: url("../images/pokemonimages/dewgong.png");
+    background-image: url("../images/pokemon-images/dewgong.png");
     background-size: contain;
     height: 150%;
     width: 150%;
 }
+
 .shellder {
-    background-image: url("../images/pokemonimages/shellder.png");
+    background-image: url("../images/pokemon-images/shellder.png");
     background-size: contain;
     height: 145%;
     width: 145%;
 }
+
 .cloyster {
-    background-image: url("../images/pokemonimages/cloyster.png");
+    background-image: url("../images/pokemon-images/cloyster.png");
     background-size: contain;
     height: 180%;
     width: 180%;
 }
+
 .krabby {
-    background-image: url("../images/pokemonimages/krabby.png");
+    background-image: url("../images/pokemon-images/krabby.png");
     background-size: contain;
     height: 185%;
     width: 185%;
 }
+
 .kingler {
-    background-image: url("../images/pokemonimages/kingler.png");
+    background-image: url("../images/pokemon-images/kingler.png");
     background-size: contain;
     height: 185%;
     width: 185%;
 }
+
 .horsea {
-    background-image: url("../images/pokemonimages/horsea.png");
+    background-image: url("../images/pokemon-images/horsea.png");
     background-size: contain;
     height: 160%;
     width: 160%;
     margin-top: 20px;
 }
+
 .seadra {
-    background-image: url("../images/pokemonimages/seadra.png");
+    background-image: url("../images/pokemon-images/seadra.png");
     background-size: contain;
     height: 185%;
     width: 185%;
     margin-top: 10px;
 }
+
 .staryu {
-    background-image: url("../images/pokemonimages/staryu.png");
+    background-image: url("../images/pokemon-images/staryu.png");
     background-size: contain;
     height: 170%;
     width: 170%;
 }
+
 .starmie {
-    background-image: url("../images/pokemonimages/starmie.png");
+    background-image: url("../images/pokemon-images/starmie.png");
     background-size: contain;
     height: 170%;
     width: 170%;
 }
+
 .magikarp {
-    background-image: url("../images/pokemonimages/magikarp.png");
+    background-image: url("../images/pokemon-images/magikarp.png");
     background-size: contain;
     height: 180%;
     width: 180%;
 }
+
 .gyarados {
-    background-image: url("../images/pokemonimages/gyarados.png");
+    background-image: url("../images/pokemon-images/gyarados.png");
     background-size: contain;
     height: 190%;
     width: 190%;
