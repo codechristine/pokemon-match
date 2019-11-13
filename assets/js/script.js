@@ -3,13 +3,13 @@ $(document).ready(initializeApp);
 var firstCardClicked = null;
 var secondCardClicked = null;
 var matches = null;
-var max_matches = 9;
+var max_matches = 1;
 var attempts = 0;
 var games_played = 0;
 var currentRound = -1;
 var rounds = [
   {
-    background: 'assets/images/pokemonimages/viridian-forest-1.jpg',
+    background: 'assets/images/main-images/bg-viridianForest.jpg',
     pokemon: [
       { pokemonType: 'caterpie', front: 'caterpie' },
       { pokemonType: 'caterpie', front: 'caterpie' },
@@ -32,7 +32,7 @@ var rounds = [
     ]
   },
   {
-    background: 'assets/images/pokemonimages/mtMoonRev2.png',
+    background: 'assets/images/main-images/bg-mtMoon.png',
     pokemon: [
       { pokemonType: 'cubone', front: 'cubone' },
       { pokemonType: 'cubone', front: 'marowak' },
@@ -55,7 +55,7 @@ var rounds = [
     ]
   },
   {
-    background: 'assets/images/pokemonimages/seafoamIsland.png',
+    background: 'assets/images/main-images/seafoamIsland.png',
     pokemon: [
       { pokemonType: 'psyduck', front: 'psyduck' },
       { pokemonType: 'psyduck', front: 'golduck' },
@@ -78,19 +78,19 @@ var rounds = [
     ]
   },
   {
-    background: 'assets/images/pokemonimages/pikaIntro.gif',
+    background: 'assets/images/main-images/pikaIntro.gif',
   },
 ]
 
 function initializeApp() {
   resetAndLoadRound();
   shuffle();
-  $('.modalClose').click(resetGame);
+  $('#modal-next').click(resetGame);
 }
 
 function resetAndLoadRound() {
   currentRound++;
-  $('#pokemonArena').empty();
+  $('#pokemon-arena').empty();
   shuffle();
   loadCurrentRound();
   $('.pokeball').on('click', handleCardClick);
@@ -98,7 +98,7 @@ function resetAndLoadRound() {
 }
 
 function resetGame() {
-  $('#modalShadow').toggleClass('hidden');
+  $('#modal-shadow').toggleClass('hidden');
   $('.pokeball').toggleClass('hidden');
   resetStats();
   displayStats();
@@ -118,8 +118,8 @@ function shuffle(){
 function loadCurrentRound() {
   var background = rounds[currentRound].background;
   var cards = rounds[currentRound].pokemon;
-  $('#pokemonArena').empty();
-  $('body').css('background-image', `url(${background})`);
+  $('#pokemon-arena').empty();
+  $('body').css({'background-image': `url(${background})`});
     for (var pokeI = 0; pokeI < cards.length; pokeI++){
     var currentCard = cards[pokeI];
     var currentBackground = background[pokeI];
@@ -133,7 +133,7 @@ function addCardToGameArea( pokemonClass, pokemonType ){
   var pokemon = $("<div>").addClass( pokemonClass);
 
   card.append( pokeball, pokemon);
-  $("#pokemonArena").append(card);
+  $("#pokemon-arena").append(card);
 }
 
 function handleCardClick(event) {
@@ -144,7 +144,7 @@ function handleCardClick(event) {
 
 function allCardsAreMatched() {
   if (matches == max_matches)
-    $('#modalShadow').removeClass();
+    $('#modal-shadow').removeClass();
 }
 
 function clickedCard() {
@@ -195,13 +195,13 @@ function clickedCard() {
 }
 
 function updateText(){
-    $('.dialogue').text('Match the Pokemon & their Evolution');
+    $('.dialogue').text('Catch the Pokemon by Matching them & their Evolution');
 }
 
 function displayStats() {
-    $('.playedNum').text(games_played);
-    $('.attemptNum').text(attempts);
-    $('.accuracyNum').text(calculateAccuracy);
+    $('.played-num').text(games_played);
+    $('.attempt-num').text(attempts);
+    $('.accuracy-num').text(calculateAccuracy);
 }
 
 function calculateAccuracy() {
