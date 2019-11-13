@@ -3,7 +3,7 @@ $(document).ready(initializeApp);
 var firstCardClicked = null;
 var secondCardClicked = null;
 var matches = null;
-var max_matches = 1;
+var max_matches = 9;
 var attempts = 0;
 var games_played = 0;
 var currentRound = -1;
@@ -77,20 +77,36 @@ var rounds = [
       { pokemonType: 'magikarp', front: 'gyarados' },
     ]
   },
-  {
-    background: 'assets/images/main-images/pikaIntro.gif',
-  },
+  // {
+  //   background: 'assets/images/main-images/pikaIntro.gif',
+  // },
 ]
 
 function initializeApp() {
+  // loadIntro();
   resetAndLoadRound();
   shuffle();
-  $('#modal-next').click(resetGame);
+  $('#modalNext').click(resetGame);
 }
+
+// function loadIntro() {
+//   $('body').css({ 'background-image': 'url("assets/images/main-images/pikaIntro.gif")', 'opacity': '0' })
+
+//   var startButton = $('<button>').addClass('startButton').text('start game');
+//   $('body').append(startButton);
+//   $(startButton).click(loadFirstRound);
+// }
+
+// function loadFirstRound() {
+//   resetAndLoadRound();
+//   loadCurrentRound();
+//   shuffle();
+//   $('#modalNext').click(resetGame);
+// }
 
 function resetAndLoadRound() {
   currentRound++;
-  $('#pokemon-arena').empty();
+  $('#pokemonArena').empty();
   shuffle();
   loadCurrentRound();
   $('.pokeball').on('click', handleCardClick);
@@ -98,7 +114,7 @@ function resetAndLoadRound() {
 }
 
 function resetGame() {
-  $('#modal-shadow').toggleClass('hidden');
+  $('#modalShadow').toggleClass('hidden');
   $('.pokeball').toggleClass('hidden');
   resetStats();
   displayStats();
@@ -106,8 +122,8 @@ function resetGame() {
   shuffle();
 }
 
-function shuffle(){
-  for(var i = rounds[currentRound].pokemon.length -1; i > 0; i--){
+function shuffle() {
+  for (var i = rounds[currentRound].pokemon.length - 1; i > 0; i--) {
     var randomPosition = Math.floor(Math.random() * i);
     var temp = rounds[currentRound].pokemon[i];
     rounds[currentRound].pokemon[i] = rounds[currentRound].pokemon[randomPosition];
@@ -118,33 +134,32 @@ function shuffle(){
 function loadCurrentRound() {
   var background = rounds[currentRound].background;
   var cards = rounds[currentRound].pokemon;
-  $('#pokemon-arena').empty();
-  $('body').css({'background-image': `url(${background})`});
-    for (var pokeI = 0; pokeI < cards.length; pokeI++){
+  $('#pokemonArena').empty();
+  $('body').css({ 'background-image': `url(${background})` });
+  for (var pokeI = 0; pokeI < cards.length; pokeI++) {
     var currentCard = cards[pokeI];
     var currentBackground = background[pokeI];
-      addCardToGameArea(currentCard.front, currentCard.pokemonType, currentBackground.background);
-    }
+    addCardToGameArea(currentCard.front, currentCard.pokemonType, currentBackground.background);
+  }
 }
 
-function addCardToGameArea( pokemonClass, pokemonType ){
-  var card = $("<div>").addClass('card');
-  var pokeball = $("<div>").addClass('pokeball').attr('data-pokemon', pokemonType);
-  var pokemon = $("<div>").addClass( pokemonClass);
+function addCardToGameArea(pokemonClass, pokemonType) {
+  var card = $('<div>').addClass('card');
+  var pokeball = $('<div>').addClass('pokeball').attr('dataPokemon', pokemonType);
+  var pokemon = $('<div>').addClass(pokemonClass);
 
-  card.append( pokeball, pokemon);
-  $("#pokemon-arena").append(card);
+  card.append(pokeball, pokemon);
+  $('#pokemonArena').append(card);
 }
 
 function handleCardClick(event) {
-  console.log(event);
   $(this).addClass('hidden');
   clickedCard();
 }
 
 function allCardsAreMatched() {
   if (matches == max_matches)
-    $('#modal-shadow').removeClass();
+    $('#modalShadow').removeClass();
 }
 
 function clickedCard() {
@@ -154,37 +169,33 @@ function clickedCard() {
   }
   secondCardClicked = $(event.currentTarget);
 
-  var urlFirstCard = firstCardClicked.attr('data-pokemon');
-  console.log(urlFirstCard);
-  var urlSecondCard = secondCardClicked.attr('data-pokemon');
-  console.log(urlSecondCard);
+  var urlFirstCard = firstCardClicked.attr('dataPokemon');
+  var urlSecondCard = secondCardClicked.attr('dataPokemon');
 
-    if (urlFirstCard === urlSecondCard) {
-      console.log("Cards Match")
-      $('.pokeball').addClass('avoid-clicks')
-      matches++;
-      attempts++;
-      allCardsAreMatched()
-      displayStats()
+  if (urlFirstCard === urlSecondCard) {
+    $('.pokeball').addClass('avoidClicks')
+    matches++;
+    attempts++;
+    allCardsAreMatched()
+    displayStats()
+    firstCardClicked = null;
+    secondCardClicked = null;
+    setTimeout(function () {
+      $('.pokeball').removeClass('avoidClicks')
+      $(firstCardClicked).removeClass('hidden');
+      $(secondCardClicked).removeClass('hidden');
+    }, 500);
+  } else if (urlFirstCard !== urlSecondCard) {
+    $('.pokeball').addClass('avoidClicks');
+    attempts++;
+    displayStats()
+    setTimeout(function () {
+      $(firstCardClicked).removeClass('hidden');
       firstCardClicked = null;
+      $(secondCardClicked).removeClass('hidden');
       secondCardClicked = null;
-      setTimeout(function () {
-        $('.pokeball').removeClass('avoid-clicks')
-        $(firstCardClicked).removeClass('hidden');
-        $(secondCardClicked).removeClass('hidden');
-      }, 500);
-    } else if (urlFirstCard !== urlSecondCard) {
-      console.log('Cards Dont Match')
-      $('.pokeball').addClass('avoid-clicks');
-      attempts++;
-      displayStats()
-      setTimeout(function () {
-        $(firstCardClicked).removeClass('hidden');
-        firstCardClicked = null;
-        $(secondCardClicked).removeClass('hidden');
-        secondCardClicked = null;
-        $('.pokeball').removeClass('avoid-clicks');
-      }, 500);
+      $('.pokeball').removeClass('avoidClicks');
+    }, 500);
   }
   if (matches === max_matches) {
     games_played++;
@@ -194,14 +205,14 @@ function clickedCard() {
   }
 }
 
-function updateText(){
-    $('.dialogue').text('Catch the Pokemon by Matching them & their Evolution');
+function updateText() {
+  $('.dialogue').text('Catch the Pokemon by Matching them & their Evolution');
 }
 
 function displayStats() {
-    $('.played-num').text(games_played);
-    $('.attempt-num').text(attempts);
-    $('.accuracy-num').text(calculateAccuracy);
+  $('.playedNum').text(games_played);
+  $('.attemptNum').text(attempts);
+  $('.accuracyNum').text(calculateAccuracy);
 }
 
 function calculateAccuracy() {
