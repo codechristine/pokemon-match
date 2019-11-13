@@ -16,13 +16,22 @@ body::after {
     z-index: -1;
 }
 
-.game-container {
+.startButton {
+    display: flex;
+    position: absolute;
+    background-color: yellow;
+    height: 5%;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.gameContainer {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.stats-container {
+.statsContainer {
     /* display: flex;
     align-items: flex-start; */
     text-align: center;
@@ -41,17 +50,17 @@ body::after {
     width: 100%;
 } */
 
-.stats-title {
+.statsTitle {
     font-size: 2rem;
     font-weight: bold;
 }
 
-.games-played,
-.played-num,
-.games-attempt,
-.attempt-num,
-.games-accuracy,
-.accuracy-num {
+.gamesPlayed,
+.playedNum,
+.gamesAttempt,
+.attemptNum,
+.gamesAccuracy,
+.accuracyNum {
     background: #F7F7F7;
     width: 10rem;
     margin: 2%;
@@ -72,7 +81,7 @@ main {
     /* margin-left: 5px; */
 }
 
-.pokemon-arena {
+.pokemonArena {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -109,7 +118,7 @@ main {
     cursor: pointer;
 }
 
-.content-bottom {
+.contentBottom {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -152,11 +161,11 @@ main {
     display: none;
 }
 
-.avoid-clicks {
+.avoidClicks {
   pointer-events: none;
 }
 
-#modal-shadow {
+#modalShadow {
   background-color: rgba(0,0,0,.4);
   height: 100vh;
   width: 100vw;
@@ -165,7 +174,7 @@ main {
   top: 0px;
 }
 
-#modal-body {
+#modalBody {
   position: fixed;
   background-color: white;
   height: 50vh;
@@ -178,7 +187,7 @@ main {
   border-style: double;
 }
 
-#modal-content {
+#modalContent {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -186,7 +195,7 @@ main {
   font-size: 4rem;
 }
 
-#modal-next {
+#modalNext {
   /* background-color: lightgray; */
   font-size: 1.5rem;
   /* border-radius: 10px; */
