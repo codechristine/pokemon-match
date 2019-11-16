@@ -118,6 +118,43 @@ main {
     cursor: pointer;
 }
 
+.healthContainer {
+    display: flex;
+    margin-left: 4%;
+}
+
+.hp {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.healthBar {
+    margin-left: 0.5%;
+    margin-top: 0.5%;
+}
+
+progress {
+    background-color: rgb(45, 197, 45);
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+progress::-webkit-progress-bar {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+progress::-webkit-progress-value {
+    background-color: rgb(45, 197, 45);
+    border: 1px solid black;
+    border-radius: 10px;
+}
+progress::-moz-progress-bar {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
 .contentBottom {
     display: flex;
     justify-content: space-around;

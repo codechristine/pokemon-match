@@ -3,7 +3,7 @@ $(document).ready(initializeApp);
 var firstCardClicked = null;
 var secondCardClicked = null;
 var matches = null;
-var max_matches = 9;
+var max_matches = 1;
 var attempts = 0;
 var games_played = 0;
 var currentRound = -1;
@@ -189,6 +189,8 @@ function clickedCard() {
     $('.pokeball').addClass('avoidClicks');
     attempts++;
     displayStats()
+    let healthBar = document.getElementById("healthBar")
+    healthBar.value -= 10;
     setTimeout(function () {
       $(firstCardClicked).removeClass('hidden');
       firstCardClicked = null;
