@@ -7,6 +7,7 @@ var max_matches = 1;
 var attempts = 0;
 var games_played = 0;
 var currentRound = -1;
+var playAgainButton = $('<button>').addClass('playAgainButton').text('PLAY AGAIN');
 var rounds = [
   {
     background: 'assets/images/main-images/bg-viridianForest.jpg',
@@ -159,7 +160,7 @@ function handleCardClick(event) {
 
 function allCardsAreMatched() {
   if (matches == max_matches)
-    $('#modalShadow').removeClass();
+    $('#modalShadow').removeClass('hidden');
 }
 
 function clickedCard() {
@@ -191,6 +192,14 @@ function clickedCard() {
     displayStats()
     let healthBar = document.getElementById("healthBar")
     healthBar.value -= 10;
+      if(healthBar.value === 0) {
+        $('#modalShadow').removeClass('hidden');
+        $('#modalContent').text('No Pokemon Caught');
+        $('#modalContent').append(playAgainButton);
+        $(playAgainButton).on("click", function () {
+          window.location.reload();
+        });
+      }
     setTimeout(function () {
       $(firstCardClicked).removeClass('hidden');
       firstCardClicked = null;
@@ -226,3 +235,12 @@ function resetStats() {
   matches = null;
   attempts = 0;
 }
+
+// function winCondition() {
+//   if (healthBar.value === 0) {
+//     $('#modalShadow').removeClass('hidden').css({}).text("Sorry");
+//     $('#modalNext').on("click", function () {
+//       window.location.reload();
+//     });
+//   }
+// }

@@ -32,16 +32,10 @@ body::after {
 }
 
 .statsContainer {
-    /* display: flex;
-    align-items: flex-start; */
     text-align: center;
     flex-direction: column;
-    /* border-radius: 10px; */
     font-size: 1.2rem;
-    /* width: 180px; */
-    /* height: 460px; */
     margin-top: -1%;
-    /* margin-top: 40px; */
     margin-left: 2%;
 }
 
@@ -66,19 +60,15 @@ body::after {
     margin: 2%;
     text-align: center;
     line-height: 3.2rem;
-    /* opacity: 0.6; */
     font-weight: bold;
     border: 2px solid black;
     border-radius: 10px;
-    /* width: 150px;
-    height: 50px; */
 }
 
 main {
     display: flex;
     justify-content: space-around;
     width: 80%;
-    /* margin-left: 5px; */
 }
 
 .pokemonArena {
@@ -87,18 +77,14 @@ main {
     justify-content: space-around;
     align-content: space-around;
     width: 80%;
-    /* margin-right: 3%; */
 }
 
 .card {
-  position: relative;
-  background-size: cover;
-  /* height: 90px;
-  width: 10%;
-  padding: 30px; */
-  height: 6rem;
-  width: 6rem;
-  padding: 3%;
+    position: relative;
+    background-size: cover;
+    height: 6rem;
+    width: 6rem;
+    padding: 3%;
 }
 
 .pokeball {
@@ -163,35 +149,21 @@ progress::-moz-progress-bar {
 
 .ash {
     height: 20rem;
-    /* height: 300px; */
 }
 
-/* .dialogue-box {
-    position: absolute;
-    height: 90%;
-} */
-
 .dialogue {
-    /* display: flex; */
-    /* position: static; */
-    /* float: right; */
     background-color: #F7F7F7;
     font-size: 40px;
     font-size: 2rem;
     width: 32%;
     text-align: center;
-    /* opacity: 0.6; */
     border-radius: 10px;
     border: 5px solid black;
     border-style: double;
-    /* margin: 65px; */
     margin: 4%;
     margin-top: 4%;
     margin-right: 25%;
     padding: 2%;
-    /* z-index: 1; */
-    /* margin-right: 250px; */
-    /* padding: 45px; */
 }
 
 .hidden {
@@ -199,48 +171,55 @@ progress::-moz-progress-bar {
 }
 
 .avoidClicks {
-  pointer-events: none;
+    pointer-events: none;
 }
 
 #modalShadow {
-  background-color: rgba(0,0,0,.4);
-  height: 100vh;
-  width: 100vw;
-  position: fixed;
-  left: 0px;
-  top: 0px;
+    background-color: rgba(0,0,0,.4);
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    left: 0px;
+    top: 0px;
 }
 
 #modalBody {
-  position: fixed;
-  background-color: white;
-  height: 50vh;
-  width: 50vw;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 10px;
-  border: 7px solid black;
-  border-style: double;
+    position: fixed;
+    background-color: white;
+    height: 50vh;
+    width: 50vw;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    border: 7px solid black;
+    border-style: double;
 }
 
 #modalContent {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 4rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
 }
 
 #modalNext {
-  /* background-color: lightgray; */
-  font-size: 1.5rem;
-  /* border-radius: 10px; */
-  /* margin: auto;
-  display: block; */
-  margin-top: 20%;
-  text-align: end;
-  cursor: pointer;
+    font-size: 1.5rem;
+    margin-top: 20%;
+    text-align: end;
+    cursor: pointer;
+}
+
+.playAgainButton {
+    display: flex;
+    color: white;
+    font-weight: bold;
+    background-color: red;
+    border-radius: 10px;
+    margin-top: 10%;
+    margin-left: 75%;
+    cursor: pointer;
 }
 
 .caterpie {
