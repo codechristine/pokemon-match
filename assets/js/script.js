@@ -256,11 +256,14 @@ function makeNewPosition() {
 }
 
 function animatePokeballs(myclass) {
-  console.log(gamesPlayed)
   if (gamesPlayed === 2) {
     var newPosition = makeNewPosition();
     $(myclass).animate({ top: newPosition[0], left: newPosition[1] }, 1000, function () {
-      animatePokeballs(myclass);
+      var cards = rounds[currentRound].pokemon;
+      for (var pokeI = 0; pokeI < cards.length; pokeI++) {
+        var myclass = cards[pokeI];
+        animatePokeballs(myclass);
+      }
     });
     return;
   }
