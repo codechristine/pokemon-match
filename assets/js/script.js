@@ -3,9 +3,9 @@ $(document).ready(initializeApp);
 var firstCardClicked = null;
 var secondCardClicked = null;
 var matches = null;
-var max_matches = 1;
+var maxMatches = 1;
 var attempts = 0;
-var games_played = 0;
+var gamesPlayed = 0;
 var currentRound = -1;
 var playAgainButton = $('<button>').addClass('playAgainButton').text('PLAY AGAIN');
 var rounds = [
@@ -118,8 +118,10 @@ function resetGame() {
   $('#modalShadow').toggleClass('hidden');
   $('.pokeball').toggleClass('hidden');
   resetStats();
+  resetHealthBar();
   displayStats();
   resetAndLoadRound();
+  animatePokeballs('.card');
   shuffle();
 }
 
@@ -159,7 +161,7 @@ function handleCardClick(event) {
 }
 
 function allCardsAreMatched() {
-  if (matches == max_matches)
+  if (matches == maxMatches)
     $('#modalShadow').removeClass('hidden');
 }
 
@@ -190,16 +192,16 @@ function clickedCard() {
     $('.pokeball').addClass('avoidClicks');
     attempts++;
     displayStats()
-    let healthBar = document.getElementById("healthBar")
+    var healthBar = document.getElementById("healthBar");
     healthBar.value -= 10;
-      if(healthBar.value === 0) {
-        $('#modalShadow').removeClass('hidden');
-        $('#modalContent').text('No Pokemon Caught');
-        $('#modalContent').append(playAgainButton);
-        $(playAgainButton).on("click", function () {
-          window.location.reload();
-        });
-      }
+    if (healthBar.value === 0) {
+      $('#modalShadow').removeClass('hidden');
+      $('#modalContent').text('No Pokemon Caught');
+      $('#modalContent').append(playAgainButton);
+      $(playAgainButton).on("click", function () {
+        window.location.reload();
+      });
+    }
     setTimeout(function () {
       $(firstCardClicked).removeClass('hidden');
       firstCardClicked = null;
@@ -208,8 +210,8 @@ function clickedCard() {
       $('.pokeball').removeClass('avoidClicks');
     }, 500);
   }
-  if (matches === max_matches) {
-    games_played++;
+  if (matches === maxMatches) {
+    gamesPlayed++;
     displayStats();
     resetStats();
     updateText();
@@ -221,13 +223,13 @@ function updateText() {
 }
 
 function displayStats() {
-  $('.playedNum').text(games_played);
+  $('.playedNum').text(gamesPlayed);
   $('.attemptNum').text(attempts);
   $('.accuracyNum').text(calculateAccuracy);
 }
 
 function calculateAccuracy() {
-  var calculatedAccuracyResult = Math.round(matches / max_matches * 100, 0) + '%'
+  var calculatedAccuracyResult = Math.round(matches / maxMatches * 100, 0) + '%'
   return calculatedAccuracyResult;
 }
 
@@ -236,11 +238,30 @@ function resetStats() {
   attempts = 0;
 }
 
-// function winCondition() {
-//   if (healthBar.value === 0) {
-//     $('#modalShadow').removeClass('hidden').css({}).text("Sorry");
-//     $('#modalNext').on("click", function () {
-//       window.location.reload();
-//     });
-//   }
-// }
+function resetHealthBar() {
+  var healthBar = document.getElementById("healthBar");
+  healthBar.value = 100;
+}
+
+function makeNewPosition() {
+  var h = $(window).height() - 50;
+  var w = $(window).width() - 50;
+  console.log(h);
+  console.log(w);
+
+  var nh = Math.floor(Math.random() * h);
+  var nw = Math.floor(Math.random() * w);
+
+  return [nh, nw];
+}
+
+function animatePokeballs(myclass) {
+  console.log(gamesPlayed)
+  if (gamesPlayed === 2) {
+    var newPosition = makeNewPosition();
+    $(myclass).animate({ top: newPosition[0], left: newPosition[1] }, 1000, function () {
+      animatePokeballs(myclass);
+    });
+    return;
+  }
+}
