@@ -10,77 +10,95 @@ var currentRound = -1;
 var playAgainButton = $('<button>').addClass('playAgainButton').text('PLAY AGAIN');
 var rounds = [
   {
-    background: 'assets/images/main-images/bg-viridianForest.jpg',
+    background: 'assets/images/background-images/bg-viridianForest.jpg',
     pokemon: [
       { pokemonType: 'caterpie', front: 'caterpie' },
       { pokemonType: 'caterpie', front: 'caterpie' },
+      { pokemonType: 'exeggcutor', front: 'exeggcutor' },
+      { pokemonType: 'exeggcutor', front: 'exeggcutor' },
+      { pokemonType: 'farfetch', front: 'farfetch' },
+      { pokemonType: 'farfetch', front: 'farfetch' },
+      { pokemonType: 'jigglypuff', front: 'jigglypuff' },
+      { pokemonType: 'jigglypuff', front: 'jigglypuff' },
       { pokemonType: 'Lickitung', front: 'Lickitung' },
       { pokemonType: 'Lickitung', front: 'Lickitung' },
       { pokemonType: 'oddish', front: 'oddish' },
       { pokemonType: 'oddish', front: 'oddish' },
-      { pokemonType: 'jigglypuff', front: 'jigglypuff' },
-      { pokemonType: 'jigglypuff', front: 'jigglypuff' },
-      { pokemonType: 'farfetch', front: 'farfetch' },
-      { pokemonType: 'farfetch', front: 'farfetch' },
-      { pokemonType: 'exeggcutor', front: 'exeggcutor' },
-      { pokemonType: 'exeggcutor', front: 'exeggcutor' },
+      { pokemonType: 'scyther', front: 'scyther' },
+      { pokemonType: 'scyther', front: 'scyther' },
       { pokemonType: 'snorlax', front: 'snorlax' },
       { pokemonType: 'snorlax', front: 'snorlax' },
       { pokemonType: 'tangela', front: 'tangela' },
       { pokemonType: 'tangela', front: 'tangela' },
-      { pokemonType: 'scyther', front: 'scyther' },
-      { pokemonType: 'scyther', front: 'scyther' },
     ]
   },
   {
-    background: 'assets/images/main-images/bg-mtMoon.png',
+    background: 'assets/images/background-images/bg-mtMoon.png',
     pokemon: [
-      { pokemonType: 'cubone', front: 'cubone' },
-      { pokemonType: 'cubone', front: 'marowak' },
-      { pokemonType: 'slowpoke', front: 'slowpoke' },
-      { pokemonType: 'slowpoke', front: 'slowbro', },
-      { pokemonType: 'clefairy', front: 'clefairy' },
-      { pokemonType: 'clefairy', front: 'clefable' },
-      { pokemonType: 'meowth', front: 'meowth' },
-      { pokemonType: 'meowth', front: 'persian' },
-      { pokemonType: 'kabuto', front: 'kabuto' },
-      { pokemonType: 'kabuto', front: 'kabutops' },
-      { pokemonType: 'gastly', front: 'gastly' },
-      { pokemonType: 'gastly', front: 'gengar' },
-      { pokemonType: 'omanyte', front: 'omanyte' },
-      { pokemonType: 'omanyte', front: 'omastar' },
       { pokemonType: 'abra', front: 'abra' },
       { pokemonType: 'abra', front: 'alakazam' },
+      { pokemonType: 'clefairy', front: 'clefairy' },
+      { pokemonType: 'clefairy', front: 'clefable' },
+      { pokemonType: 'cubone', front: 'cubone' },
+      { pokemonType: 'cubone', front: 'marowak' },
+      { pokemonType: 'gastly', front: 'gastly' },
+      { pokemonType: 'gastly', front: 'gengar' },
+      { pokemonType: 'kabuto', front: 'kabuto' },
+      { pokemonType: 'kabuto', front: 'kabutops' },
+      { pokemonType: 'meowth', front: 'meowth' },
+      { pokemonType: 'meowth', front: 'persian' },
       { pokemonType: 'nidorina', front: 'nidorina' },
       { pokemonType: 'nidorina', front: 'nidoqueen' },
+      { pokemonType: 'omanyte', front: 'omanyte' },
+      { pokemonType: 'omanyte', front: 'omastar' },
+      { pokemonType: 'slowpoke', front: 'slowpoke' },
+      { pokemonType: 'slowpoke', front: 'slowbro', },
     ]
   },
   {
-    background: 'assets/images/main-images/seafoamIsland.png',
+    background: 'assets/images/background-images/bg-seafoamIsland.png',
     pokemon: [
-      { pokemonType: 'psyduck', front: 'psyduck' },
-      { pokemonType: 'psyduck', front: 'golduck' },
-      { pokemonType: 'poliwag', front: 'poliwag' },
-      { pokemonType: 'poliwag', front: 'poliwhirl', },
-      { pokemonType: 'tentacool', front: 'tentacool' },
-      { pokemonType: 'tentacool', front: 'tentacruel' },
-      { pokemonType: 'seel', front: 'seel' },
-      { pokemonType: 'seel', front: 'dewgong' },
-      { pokemonType: 'shellder', front: 'shellder' },
-      { pokemonType: 'shellder', front: 'cloyster' },
       { pokemonType: 'krabby', front: 'krabby' },
       { pokemonType: 'krabby', front: 'kingler' },
       { pokemonType: 'horsea', front: 'horsea' },
       { pokemonType: 'horsea', front: 'seadra' },
-      { pokemonType: 'staryu', front: 'staryu' },
-      { pokemonType: 'staryu', front: 'starmie' },
       { pokemonType: 'magikarp', front: 'magikarp' },
       { pokemonType: 'magikarp', front: 'gyarados' },
+      { pokemonType: 'poliwag', front: 'poliwag' },
+      { pokemonType: 'poliwag', front: 'poliwhirl', },
+      { pokemonType: 'psyduck', front: 'psyduck' },
+      { pokemonType: 'psyduck', front: 'golduck' },
+      { pokemonType: 'seel', front: 'seel' },
+      { pokemonType: 'seel', front: 'dewgong' },
+      { pokemonType: 'shellder', front: 'shellder' },
+      { pokemonType: 'shellder', front: 'cloyster' },
+      { pokemonType: 'staryu', front: 'staryu' },
+      { pokemonType: 'staryu', front: 'starmie' },
+      { pokemonType: 'tentacool', front: 'tentacool' },
+      { pokemonType: 'tentacool', front: 'tentacruel' },
     ]
   },
-  // {
-  //   background: 'assets/images/main-images/pikaIntro.gif',
-  // },
+  {
+    background: 'assets/images/background-images/bg-unownDungeon.png',
+    pokemon: [
+      { pokemonType: 'p', front: 'p' },
+      { pokemonType: 'p', front: 'p' },
+      { pokemonType: 'o', front: 'o' },
+      { pokemonType: 'o', front: 'o' },
+      { pokemonType: 'k', front: 'k' },
+      { pokemonType: 'k', front: 'k' },
+      { pokemonType: 'e', front: 'e' },
+      { pokemonType: 'e', front: 'e' },
+      { pokemonType: 'm', front: 'm' },
+      { pokemonType: 'm', front: 'm' },
+      { pokemonType: 'o', front: 'o' },
+      { pokemonType: 'o', front: 'o' },
+      { pokemonType: 'n', front: 'n' },
+      { pokemonType: 'n', front: 'n' },
+      { pokemonType: 'exclam', front: 'exclam' },
+      { pokemonType: 'exclam', front: 'exclam' },
+    ]
+  },
 ]
 
 function initializeApp() {
@@ -91,7 +109,7 @@ function initializeApp() {
 }
 
 // function loadIntro() {
-//   $('body').css({ 'background-image': 'url("assets/images/main-images/pikaIntro.gif")', 'opacity': '0' })
+//   $('body').css({ 'background-image': 'url("assets/images/background-images/pikaIntro.gif")', 'opacity': '0' })
 
 //   var startButton = $('<button>').addClass('startButton').text('start game');
 //   $('body').append(startButton);
@@ -121,7 +139,34 @@ function resetGame() {
   resetHealthBar();
   displayStats();
   resetAndLoadRound();
-  animatePokeballs('.card');
+  animateUnown('.card');
+  // animateUnown('.b');
+  // animateUnown('.c');
+  // animateUnown('.d');
+  // animateUnown('.e');
+  // animateUnown('.f');
+  // animateUnown('.g');
+  // animateUnown('.h');
+  // animateUnown('.i');
+  // animateUnown('.j');
+  // animateUnown('.k');
+  // animateUnown('.l');
+  // animateUnown('.m');
+  // animateUnown('.n');
+  // animateUnown('.o');
+  // animateUnown('.p');
+  // animateUnown('.q');
+  // animateUnown('.r');
+  // animateUnown('.s');
+  // animateUnown('.t');
+  // animateUnown('.u');
+  // animateUnown('.v');
+  // animateUnown('.w');
+  // animateUnown('.x');
+  // animateUnown('.y');
+  // animateUnown('.z');
+  // animateUnown('.dash');
+  // animateUnown('.exclam');
   shuffle();
 }
 
@@ -196,6 +241,7 @@ function clickedCard() {
     healthBar.value -= 10;
     if (healthBar.value === 0) {
       $('#modalShadow').removeClass('hidden');
+      $('#modalBody').css({'background-image': 'url("assets/images/misc-images/pika-loser.png")'});
       $('#modalContent').text('No Pokemon Caught');
       $('#modalContent').append(playAgainButton);
       $(playAgainButton).on("click", function () {
@@ -244,8 +290,8 @@ function resetHealthBar() {
 }
 
 function makeNewPosition() {
-  var h = $(window).height() - 50;
-  var w = $(window).width() - 50;
+  var h = $('#pokemonArena').height() - 50;
+  var w = $('#pokemonArena').width() - 50;
   console.log(h);
   console.log(w);
 
@@ -255,13 +301,18 @@ function makeNewPosition() {
   return [nh, nw];
 }
 
-function animatePokeballs(myclass) {
-  console.log(gamesPlayed)
-  if (gamesPlayed === 2) {
+// function animateRound2(){
+//   if(gamesPlayed === 2){
+
+//   }
+// }
+
+function animateUnown(myclass) {
+  if (gamesPlayed === 3) {
     var newPosition = makeNewPosition();
-    $(myclass).animate({ top: newPosition[0], left: newPosition[1] }, 1000, function () {
-      animatePokeballs(myclass);
-    });
-    return;
+    $(myclass).animate({ top: newPosition[0], left: newPosition[1] }, 2500, function () {
+      animateUnown(myclass);
+    })
   }
+  return;
 }
