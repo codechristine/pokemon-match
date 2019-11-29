@@ -102,7 +102,7 @@ main {
 .pokeball {
     position: absolute;
     box-sizing: border-box;
-    background-image: url("../images/main-images/pokeball.png");
+    background-image: url("../images/misc-images/pokeball.png");
     background-size: cover;
     background-repeat: no-repeat;
     height: 113%;
@@ -205,7 +205,10 @@ progress::-moz-progress-bar {
 
 #modalBody {
     position: fixed;
-    background-color: white;
+    background-image: url('../images/misc-images/pika-winner.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: rgba(255, 255, 255, 0.87);
     height: 50vh;
     width: 50vw;
     left: 50%;
@@ -218,13 +221,14 @@ progress::-moz-progress-bar {
 
 #modalContent {
     position: absolute;
-    left: 50%;
+    left: 75%;
     top: 50%;
     transform: translate(-50%, -50%);
     font-size: 4rem;
 }
 
 #modalNext {
+    color: red;
     font-size: 1.5rem;
     margin-top: 20%;
     text-align: end;
@@ -569,6 +573,7 @@ progress::-moz-progress-bar {
 .a {
     background-image: url("../images/unown-images/a.png");
     background-size: contain;
+    background-repeat: no-repeat;
     height: 100%;
     width: 55%;
 }

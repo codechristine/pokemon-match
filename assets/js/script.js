@@ -10,7 +10,7 @@ var currentRound = -1;
 var playAgainButton = $('<button>').addClass('playAgainButton').text('PLAY AGAIN');
 var rounds = [
   {
-    background: 'assets/images/main-images/bg-viridianForest.jpg',
+    background: 'assets/images/background-images/bg-viridianForest.jpg',
     pokemon: [
       { pokemonType: 'caterpie', front: 'caterpie' },
       { pokemonType: 'caterpie', front: 'caterpie' },
@@ -33,7 +33,7 @@ var rounds = [
     ]
   },
   {
-    background: 'assets/images/main-images/bg-mtMoon.png',
+    background: 'assets/images/background-images/bg-mtMoon.png',
     pokemon: [
       { pokemonType: 'abra', front: 'abra' },
       { pokemonType: 'abra', front: 'alakazam' },
@@ -56,7 +56,7 @@ var rounds = [
     ]
   },
   {
-    background: 'assets/images/main-images/bg-seafoamIsland.png',
+    background: 'assets/images/background-images/bg-seafoamIsland.png',
     pokemon: [
       { pokemonType: 'krabby', front: 'krabby' },
       { pokemonType: 'krabby', front: 'kingler' },
@@ -79,34 +79,23 @@ var rounds = [
     ]
   },
   {
-    background: 'assets/images/main-images/bg-unownDungeon.png',
+    background: 'assets/images/background-images/bg-unownDungeon.png',
     pokemon: [
-      { pokemonType: 'a', front: 'a' },
-      { pokemonType: 'b', front: 'b' },
-      { pokemonType: 'c', front: 'c' },
-      { pokemonType: 'd', front: 'd' },
-      { pokemonType: 'e', front: 'e' },
-      { pokemonType: 'f', front: 'f' },
-      { pokemonType: 'g', front: 'g' },
-      { pokemonType: 'h', front: 'h' },
-      { pokemonType: 'i', front: 'i' },
-      { pokemonType: 'j', front: 'j' },
-      { pokemonType: 'k', front: 'k' },
-      { pokemonType: 'l', front: 'l' },
-      { pokemonType: 'm', front: 'm' },
-      { pokemonType: 'n', front: 'n' },
-      { pokemonType: 'o', front: 'o' },
       { pokemonType: 'p', front: 'p' },
-      { pokemonType: 'q', front: 'q' },
-      { pokemonType: 'r', front: 'r' },
-      { pokemonType: 's', front: 's' },
-      { pokemonType: 't', front: 't' },
-      { pokemonType: 'u', front: 'u' },
-      { pokemonType: 'v', front: 'v' },
-      { pokemonType: 'w', front: 'w' },
-      { pokemonType: 'x', front: 'x' },
-      { pokemonType: 'z', front: 'z' },
-      { pokemonType: 'dash', front: 'dash' },
+      { pokemonType: 'p', front: 'p' },
+      { pokemonType: 'o', front: 'o' },
+      { pokemonType: 'o', front: 'o' },
+      { pokemonType: 'k', front: 'k' },
+      { pokemonType: 'k', front: 'k' },
+      { pokemonType: 'e', front: 'e' },
+      { pokemonType: 'e', front: 'e' },
+      { pokemonType: 'm', front: 'm' },
+      { pokemonType: 'm', front: 'm' },
+      { pokemonType: 'o', front: 'o' },
+      { pokemonType: 'o', front: 'o' },
+      { pokemonType: 'n', front: 'n' },
+      { pokemonType: 'n', front: 'n' },
+      { pokemonType: 'exclam', front: 'exclam' },
       { pokemonType: 'exclam', front: 'exclam' },
     ]
   },
@@ -120,7 +109,7 @@ function initializeApp() {
 }
 
 // function loadIntro() {
-//   $('body').css({ 'background-image': 'url("assets/images/main-images/pikaIntro.gif")', 'opacity': '0' })
+//   $('body').css({ 'background-image': 'url("assets/images/background-images/pikaIntro.gif")', 'opacity': '0' })
 
 //   var startButton = $('<button>').addClass('startButton').text('start game');
 //   $('body').append(startButton);
@@ -150,34 +139,34 @@ function resetGame() {
   resetHealthBar();
   displayStats();
   resetAndLoadRound();
-  animateUnown('.a');
-  animateUnown('.b');
-  animateUnown('.c');
-  animateUnown('.d');
-  animateUnown('.e');
-  animateUnown('.f');
-  animateUnown('.g');
-  animateUnown('.h');
-  animateUnown('.i');
-  animateUnown('.j');
-  animateUnown('.k');
-  animateUnown('.l');
-  animateUnown('.m');
-  animateUnown('.n');
-  animateUnown('.o');
-  animateUnown('.p');
-  animateUnown('.q');
-  animateUnown('.r');
-  animateUnown('.s');
-  animateUnown('.t');
-  animateUnown('.u');
-  animateUnown('.v');
-  animateUnown('.w');
-  animateUnown('.x');
-  animateUnown('.y');
-  animateUnown('.z');
-  animateUnown('.dash');
-  animateUnown('.exclam');
+  animateUnown('.card');
+  // animateUnown('.b');
+  // animateUnown('.c');
+  // animateUnown('.d');
+  // animateUnown('.e');
+  // animateUnown('.f');
+  // animateUnown('.g');
+  // animateUnown('.h');
+  // animateUnown('.i');
+  // animateUnown('.j');
+  // animateUnown('.k');
+  // animateUnown('.l');
+  // animateUnown('.m');
+  // animateUnown('.n');
+  // animateUnown('.o');
+  // animateUnown('.p');
+  // animateUnown('.q');
+  // animateUnown('.r');
+  // animateUnown('.s');
+  // animateUnown('.t');
+  // animateUnown('.u');
+  // animateUnown('.v');
+  // animateUnown('.w');
+  // animateUnown('.x');
+  // animateUnown('.y');
+  // animateUnown('.z');
+  // animateUnown('.dash');
+  // animateUnown('.exclam');
   shuffle();
 }
 
@@ -252,6 +241,7 @@ function clickedCard() {
     healthBar.value -= 10;
     if (healthBar.value === 0) {
       $('#modalShadow').removeClass('hidden');
+      $('#modalBody').css({'background-image': 'url("assets/images/misc-images/pika-loser.png")'});
       $('#modalContent').text('No Pokemon Caught');
       $('#modalContent').append(playAgainButton);
       $(playAgainButton).on("click", function () {
