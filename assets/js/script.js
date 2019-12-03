@@ -99,6 +99,12 @@ var rounds = [
       { pokemonType: 'exclam', front: 'exclam' },
     ]
   },
+  {
+    background: 'assets/images/misc-images/pika-end.gif',
+    pokemon: [
+      { pokemonType: 'end', front: 'end'}
+    ]
+  }
 ]
 
 function initializeApp() {
@@ -129,7 +135,7 @@ function resetAndLoadRound() {
   shuffle();
   loadCurrentRound();
   $('.pokeball').on('click', handleCardClick);
-  $('#rocket').addClass('hidden')
+  $('#rocket').addClass('hidden');
 }
 
 function resetGame() {
@@ -139,35 +145,10 @@ function resetGame() {
   resetHealthBar();
   displayStats();
   resetAndLoadRound();
+  animateRound2();
   animateUnown('.card');
-  // animateUnown('.b');
-  // animateUnown('.c');
-  // animateUnown('.d');
-  // animateUnown('.e');
-  // animateUnown('.f');
-  // animateUnown('.g');
-  // animateUnown('.h');
-  // animateUnown('.i');
-  // animateUnown('.j');
-  // animateUnown('.k');
-  // animateUnown('.l');
-  // animateUnown('.m');
-  // animateUnown('.n');
-  // animateUnown('.o');
-  // animateUnown('.p');
-  // animateUnown('.q');
-  // animateUnown('.r');
-  // animateUnown('.s');
-  // animateUnown('.t');
-  // animateUnown('.u');
-  // animateUnown('.v');
-  // animateUnown('.w');
-  // animateUnown('.x');
-  // animateUnown('.y');
-  // animateUnown('.z');
-  // animateUnown('.dash');
-  // animateUnown('.exclam');
   shuffle();
+  endGame();
 }
 
 function shuffle() {
@@ -292,8 +273,6 @@ function resetHealthBar() {
 function makeNewPosition() {
   var h = $('#pokemonArena').height() - 50;
   var w = $('#pokemonArena').width() - 50;
-  console.log(h);
-  console.log(w);
 
   var nh = Math.floor(Math.random() * h);
   var nw = Math.floor(Math.random() * w);
@@ -301,11 +280,20 @@ function makeNewPosition() {
   return [nh, nw];
 }
 
-// function animateRound2(){
-//   if(gamesPlayed === 2){
-
-//   }
-// }
+function animateRound2(){
+  if(gamesPlayed === 2){
+    switch(attempts){
+      case 2:  $('.card').css({ 'transform': 'translate(-50%, -50%)' });
+      break;
+      case 4:
+      break;
+      case 6:
+      break;
+      case 8:
+      break;
+    }
+  }
+}
 
 function animateUnown(myclass) {
   if (gamesPlayed === 3) {
@@ -315,4 +303,14 @@ function animateUnown(myclass) {
     })
   }
   return;
+}
+
+function endGame(){
+  if(gamesPlayed === 4) {
+    $('body').empty();
+    $('body').append(playAgainButton);
+    $(playAgainButton).on("click", function () {
+      window.location.reload();
+    });
+  }
 }
