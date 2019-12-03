@@ -10,7 +10,7 @@ body {
 body::after {
     position: absolute;
     content: "";
-    background: white;
+    background-color: white;
     background-size: cover;
     opacity: 0.4;
     top: 0;
@@ -570,73 +570,10 @@ progress::-moz-progress-bar {
     width: 180%;
 }
 
-.a {
-    background-image: url("../images/unown-images/a.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 100%;
-    width: 55%;
-}
-
-.b {
-    background-image: url("../images/unown-images/b.png");
-    background-size: contain;
-    height: 100%;
-    width: 55%;
-}
-
-.c {
-    background-image: url("../images/unown-images/c.png");
-    background-size: contain;
-    height: 100%;
-    width: 55%;
-}
-
-.d {
-    background-image: url("../images/unown-images/d.png");
-    background-size: contain;
-    height: 100%;
-    width: 55%;
-}
-
 .e {
     background-image: url("../images/unown-images/e.png");
     background-size: contain;
-    height: 100%;
-    width: 55%;
-}
-
-.f {
-    background-image: url("../images/unown-images/f.png");
-    background-size: contain;
-    height: 100%;
-    width: 55%;
-}
-
-.g {
-    background-image: url("../images/unown-images/g.png");
-    background-size: contain;
-    height: 100%;
-    width: 55%;
-}
-
-.h {
-    background-image: url("../images/unown-images/h.png");
-    background-size: contain;
-    height: 100%;
-    width: 55%;
-}
-
-.i {
-    background-image: url("../images/unown-images/i.png");
-    background-size: contain;
-    height: 100%;
-    width: 55%;
-}
-
-.j {
-    background-image: url("../images/unown-images/j.png");
-    background-size: contain;
+    background-repeat: no-repeat;
     height: 100%;
     width: 55%;
 }
@@ -644,13 +581,7 @@ progress::-moz-progress-bar {
 .k {
     background-image: url("../images/unown-images/k.png");
     background-size: contain;
-    height: 100%;
-    width: 55%;
-}
-
-.l {
-    background-image: url("../images/unown-images/l.png");
-    background-size: contain;
+    background-repeat: no-repeat;
     height: 100%;
     width: 55%;
 }
@@ -658,6 +589,7 @@ progress::-moz-progress-bar {
 .m {
     background-image: url("../images/unown-images/m.png");
     background-size: contain;
+    background-repeat: no-repeat;
     height: 100%;
     width: 55%;
 }
@@ -665,6 +597,7 @@ progress::-moz-progress-bar {
 .n {
     background-image: url("../images/unown-images/n.png");
     background-size: contain;
+    background-repeat: no-repeat;
     height: 100%;
     width: 55%;
 }
@@ -672,6 +605,7 @@ progress::-moz-progress-bar {
 .o {
     background-image: url("../images/unown-images/o.png");
     background-size: contain;
+    background-repeat: no-repeat;
     height: 100%;
     width: 55%;
 }
@@ -679,83 +613,7 @@ progress::-moz-progress-bar {
 .p {
     background-image: url("../images/unown-images/p.png");
     background-size: contain;
-    height: 100%;
-    width: 55%;
-}
-
-.q {
-    background-image: url("../images/unown-images/q.png");
-    background-size: contain;
-    height: 100%;
-    width: 55%;
-}
-
-.r {
-    background-image: url("../images/unown-images/r.png");
-    background-size: contain;
-    height: 100%;
-    width: 55%;
-}
-
-.s {
-    background-image: url("../images/unown-images/s.png");
-    background-size: contain;
-    height: 100%;
-    width: 55%;
-}
-
-.t {
-    background-image: url("../images/unown-images/t.png");
-    background-size: contain;
-    height: 100%;
-    width: 55%;
-}
-
-.u {
-    background-image: url("../images/unown-images/u.png");
-    background-size: contain;
-    height: 100%;
-    width: 55%;
-}
-
-.v {
-    background-image: url("../images/unown-images/v.png");
-    background-size: contain;
-    height: 100%;
-    width: 55%;
-}
-
-.w {
-    background-image: url("../images/unown-images/w.png");
-    background-size: contain;
-    height: 100%;
-    width: 55%;
-}
-
-.x {
-    background-image: url("../images/unown-images/x.png");
-    background-size: contain;
-    height: 100%;
-    width: 55%;
-}
-
-.y {
-    background-image: url("../images/unown-images/y.png");
-    background-size: contain;
-    height: 100%;
-    width: 55%;
-}
-
-.z {
-    background-image: url("../images/unown-images/z.png");
-    background-size: contain;
-    height: 100%;
-    width: 55%;
-}
-
-.dash {
-    background-image: url("../images/unown-images/dash.png");
-    background-size: contain;
+    background-repeat: no-repeat;
     height: 100%;
     width: 55%;
 }
@@ -763,6 +621,7 @@ progress::-moz-progress-bar {
 .exclam {
     background-image: url("../images/unown-images/!.png");
     background-size: contain;
+    background-repeat: no-repeat;
     height: 100%;
     width: 55%;
 }
