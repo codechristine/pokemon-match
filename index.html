@@ -2,69 +2,70 @@
 <html>
 
 <head>
-
-  <title>Pokemon Memory Match</title>
-  <link rel="stylesheet" href="assets\css\style.css">
+  <title>Pokemon Match</title>
+  <link rel="stylesheet" href="assets/css/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <script src="assets/js/script.js"></script>
-
 </head>
 
 <body>
-
-  <img class='hidden' id='pikaIntro' src='../memory_match/assets/images/pokemonimages/pikaIntro.gif' alt='pikachuGif'>
-  <div class="main-game-container">
-    <div class='statsContainer'>
-      <aside>
-        <div class='statsTitle'>
-          Stats
+  <div class="mainContainer">
+    <div class="gameContainer">
+      <div class="statsContainer">
+        <aside>
+          <div class="statsTitle">
+            Stats
+          </div>
+          <div class="gamesPlayed">
+            Games Played
+          </div>
+          <div class="playedNum">
+            0
+          </div>
+          <div class="gamesAttempt">
+            Attempts
+          </div>
+          <div class="attemptNum">
+            0
+          </div>
+          <div class="gamesAccuracy">
+            Accuracy
+          </div>
+          <div class="accuracyNum">
+            0%
+          </div>
+        </aside>
+      </div>
+      <main>
+        <div class="pokemonArena" id="pokemonArena">
+          <div class="card">
+          </div>
         </div>
-
-        <div class='gamesPlayed'>
-          Games Played
-        </div>
-        <div class='playedNum'>
-          0
-        </div>
-        <div class='gameAttempt'>
-          Attempts
-        </div>
-        <div class='attemptNum'>
-          0
-        </div>
-        <div class='gamesAccuracy'>
-          Accuracy
-        </div>
-        <div class='accuracyNum'>
-          0%
-        </div>
-
-      </aside>
+      </main>
     </div>
-
-    <main>
-      <div class='container' id='pokemonArena'>
-              <div class='card'>
-        </div>
-      </div>
-    </main>
-  </div>
-
-    <div id='modalShadow' class='hidden'>
-      <div id='modalBody'>
-        <div id='modalContent'>
+    <div id="modalShadow" class="hidden">
+      <div id="modalBody">
+        <div id="modalContent">
           Caught 'Em!
-          <button type='button' class='modalClose'>CLOSE</button>
+          <div id="modalNext">
+            NEXT
+            <i class="fas fa-caret-right fa-1x"></i>
+          </div>
         </div>
       </div>
+    </div>
+    <div class="healthContainer">
+    <div class="hp">HP:</div>
+    <progress id="healthBar" class="healthBar" value="100" max="100"></progress>
+    </div>
+    <div class="contentBottom">
+      <img class="ash" src="./assets/images/misc-images/ash.png" alt="ash">
+      <div class="dialogue">
+        Catch the Pokemon by Matching them Together
+      </div>
+    </div>
   </div>
-</div>
-
-      <img class='ash' src='../memory_match/assets/images/pokemonimages/ashpixel.png' alt='ash and pika'>
-        <div class='dialogue'>
-          Match The Pokemon Together
-  </div>
-
 </body>
 
 </html>
