@@ -3,11 +3,11 @@ $(document).ready(initializeApp);
 var firstCardClicked = null;
 var secondCardClicked = null;
 var matches = null;
-var maxMatches = 9;
+var maxMatches = 1;
 var attempts = 0;
 var gamesPlayed = 0;
 var currentRound = -1;
-var playAgainButton = $('<button>').addClass('playAgainButton').text('PLAY AGAIN');
+var button = $('<button>');
 var rounds = [
   {
     background: 'assets/images/background-images/bg-viridianForest.jpg',
@@ -78,53 +78,73 @@ var rounds = [
       { pokemonType: 'tentacool', front: 'tentacruel' },
     ]
   },
-  {
-    background: 'assets/images/background-images/bg-unownDungeon.png',
-    pokemon: [
-      { pokemonType: 'p', front: 'p' },
-      { pokemonType: 'p', front: 'p' },
-      { pokemonType: 'o', front: 'o' },
-      { pokemonType: 'o', front: 'o' },
-      { pokemonType: 'k', front: 'k' },
-      { pokemonType: 'k', front: 'k' },
-      { pokemonType: 'e', front: 'e' },
-      { pokemonType: 'e', front: 'e' },
-      { pokemonType: 'm', front: 'm' },
-      { pokemonType: 'm', front: 'm' },
-      { pokemonType: 'o', front: 'o' },
-      { pokemonType: 'o', front: 'o' },
-      { pokemonType: 'n', front: 'n' },
-      { pokemonType: 'n', front: 'n' },
-      { pokemonType: 'exclam', front: 'exclam' },
-      { pokemonType: 'exclam', front: 'exclam' },
-    ]
-  },
+  // {
+  //   background: 'assets/images/background-images/bg-unownDungeon.png',
+  //   pokemon: [
+  //     { pokemonType: 'p', front: 'p' },
+  //     { pokemonType: 'p', front: 'p' },
+  //     { pokemonType: 'o', front: 'o' },
+  //     { pokemonType: 'o', front: 'o' },
+  //     { pokemonType: 'k', front: 'k' },
+  //     { pokemonType: 'k', front: 'k' },
+  //     { pokemonType: 'e', front: 'e' },
+  //     { pokemonType: 'e', front: 'e' },
+  //     { pokemonType: 'm', front: 'm' },
+  //     { pokemonType: 'm', front: 'm' },
+  //     { pokemonType: 'o', front: 'o' },
+  //     { pokemonType: 'o', front: 'o' },
+  //     { pokemonType: 'n', front: 'n' },
+  //     { pokemonType: 'n', front: 'n' },
+  //     { pokemonType: 'exclam', front: 'exclam' },
+  //     { pokemonType: 'exclam', front: 'exclam' },
+  //     { pokemonType: 'dash', front: 'dash' },
+  //     { pokemonType: 'dash', front: 'dash' },
+  //   ]
+  // },
   {
     background: 'assets/images/misc-images/pika-end.gif',
     pokemon: [
       { pokemonType: 'end', front: 'end'}
     ]
-  }
+  },
 ]
 
 function initializeApp() {
-  // loadIntro();
+  loadIntro();
   resetAndLoadRound();
   shuffle();
   $('#modalNext').click(resetGame);
 }
 
-// function loadIntro() {
-//   $('body').css({ 'background-image': 'url("assets/images/background-images/pikaIntro.gif")', 'opacity': '0' })
+function loadIntro(){
+  console.log(currentRound);
+//   console.log(gamesPlayed);
+//   if(gamesPlayed === 0){
+//     $('#modalShadow').removeClass('hidden');
+//     $('#modalBody').css({ 'background-image': 'url("assets/images/misc-images/pika-intro-four.gif")' });
+//     $('#modalContent').css({ 'width': '70%', 'left': '50%', 'top': '35vh', 'text-align': 'center'}).text('This game is best played in portrait mode.');
+//     $(button).addClass('.startButton').text('start game');
+//     $(button).addClass('startButton').text('PLAY')
+//     $('#modalContent').append(button);
+//     $(button).on("click", function () {
+//       $('#modalShadow').addClass('hidden');
+//     });
+//   }
+}
 
-//   var startButton = $('<button>').addClass('startButton').text('start game');
-//   $('body').append(startButton);
-//   $(startButton).click(loadFirstRound);
+// function loadIntro() {
+//   $('body').css({ 'background-image': 'url("assets/images/misc-images/pika-intro-one.gif")', 'opacity': '0', 'height': '45vh' })
+//   $(button).addClass('startButton').text('start game');
+//   $('body').append(button);
+//   $(button).on('click', function(){
+//     resetAndLoadRound();
+//     shuffle();
+//     $('#modalNext').click(resetGame);
+//   });
 // }
 
 // function loadFirstRound() {
 //   resetAndLoadRound();
-//   loadCurrentRound();
 //   shuffle();
 //   $('#modalNext').click(resetGame);
 // }
@@ -135,7 +155,6 @@ function resetAndLoadRound() {
   shuffle();
   loadCurrentRound();
   $('.pokeball').on('click', handleCardClick);
-  $('#rocket').addClass('hidden');
 }
 
 function resetGame() {
@@ -145,8 +164,7 @@ function resetGame() {
   resetHealthBar();
   displayStats();
   resetAndLoadRound();
-  animateRound2();
-  animateUnown('.card');
+  // animateUnown('.card');
   shuffle();
   endGame();
 }
@@ -224,8 +242,9 @@ function clickedCard() {
       $('#modalShadow').removeClass('hidden');
       $('#modalBody').css({'background-image': 'url("assets/images/misc-images/pika-loser.png")'});
       $('#modalContent').text('No Pokemon Caught');
-      $('#modalContent').append(playAgainButton);
-      $(playAgainButton).on("click", function () {
+      $(button).addClass('playAgainButton').text('PLAY AGAIN')
+      $('#modalContent').append(button);
+      $(button).on("click", function () {
         window.location.reload();
       });
     }
@@ -270,46 +289,32 @@ function resetHealthBar() {
   healthBar.value = 100;
 }
 
-function makeNewPosition() {
-  var h = $('#pokemonArena').height() - 50;
-  var w = $('#pokemonArena').width() - 50;
+// function makeNewPosition() {
+//   var h = $('#pokemonArena').height() - 90;
+//   var w = $('#pokemonArena').width() - 90;
 
-  var nh = Math.floor(Math.random() * h);
-  var nw = Math.floor(Math.random() * w);
+//   var nh = Math.floor(Math.random() * h);
+//   var nw = Math.floor(Math.random() * w);
 
-  return [nh, nw];
-}
+//   return [nh, nw];
+// }
 
-function animateRound2(){
-  if(gamesPlayed === 2){
-    switch(attempts){
-      case 2:  $('.card').css({ 'transform': 'translate(-50%, -50%)' });
-      break;
-      case 4:
-      break;
-      case 6:
-      break;
-      case 8:
-      break;
-    }
-  }
-}
-
-function animateUnown(myclass) {
-  if (gamesPlayed === 3) {
-    var newPosition = makeNewPosition();
-    $(myclass).animate({ top: newPosition[0], left: newPosition[1] }, 2500, function () {
-      animateUnown(myclass);
-    })
-  }
-  return;
-}
+// function animateUnown(myclass) {
+//   if (gamesPlayed === 3) {
+//     var newPosition = makeNewPosition();
+//     $(myclass).animate({ top: newPosition[0], left: newPosition[1] }, 2500, function () {
+//       animateUnown(myclass);
+//     })
+//   }
+//   return;
+// }
 
 function endGame(){
-  if(gamesPlayed === 4) {
+  if(gamesPlayed === 3) {
     $('body').empty();
-    $('body').append(playAgainButton);
-    $(playAgainButton).on("click", function () {
+    $('body').css({ "height": '24vh' });
+    $('body').append(button);
+    $(button).on("click", function () {
       window.location.reload();
     });
   }
