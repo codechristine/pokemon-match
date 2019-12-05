@@ -116,8 +116,7 @@ function initializeApp() {
   $('#modalNext').click(resetGame);
 }
 
-function loadIntro(){
-  console.log(currentRound);
+// function loadIntro(){
 //   console.log(gamesPlayed);
 //   if(gamesPlayed === 0){
 //     $('#modalShadow').removeClass('hidden');
@@ -130,7 +129,7 @@ function loadIntro(){
 //       $('#modalShadow').addClass('hidden');
 //     });
 //   }
-}
+// }
 
 // function loadIntro() {
 //   $('body').css({ 'background-image': 'url("assets/images/misc-images/pika-intro-one.gif")', 'opacity': '0', 'height': '45vh' })
