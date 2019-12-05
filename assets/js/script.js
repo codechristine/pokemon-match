@@ -110,7 +110,6 @@ var rounds = [
 ]
 
 function initializeApp() {
-  loadIntro();
   resetAndLoadRound();
   shuffle();
   $('#modalNext').click(resetGame);
@@ -192,7 +191,7 @@ function loadCurrentRound() {
 function addCardToGameArea(pokemonClass, pokemonType) {
   var card = $('<div>').addClass('card');
   var pokeball = $('<div>').addClass('pokeball').attr('dataPokemon', pokemonType);
-  var pokemon = $('<div>').addClass(pokemonClass);
+  var pokemon = $('<div>').addClass(pokemonClass).css({ 'margin-top': '25%' });
 
   card.append(pokeball, pokemon);
   $('#pokemonArena').append(card);
@@ -240,7 +239,7 @@ function clickedCard() {
     if (healthBar.value === 0) {
       $('#modalShadow').removeClass('hidden');
       $('#modalBody').css({'background-image': 'url("assets/images/misc-images/pika-loser.png")'});
-      $('#modalContent').text('No Pokemon Caught');
+      $('#modalContent').css({ 'left': '38vw', 'top': '34vh' }).text('No Pokemon Caught');
       $(button).addClass('playAgainButton').text('PLAY AGAIN')
       $('#modalContent').append(button);
       $(button).on("click", function () {
