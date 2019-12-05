@@ -1,0 +1,16 @@
+/**************************************
+            HTML / BODY
+**************************************/
+
+@media only screen and (min-width: 374px) {
+  body {
+    height: 100vh;
+  }
+  .mainContainer {
+    margin-top: 20%;
+  }
+  .pokeball {
+    height: 113%;
+    width: 113%;
+  }
+}
