@@ -219,6 +219,7 @@ progress::-moz-progress-bar {
     color: white;
     font-weight: bold;
     background-color: red;
+    height: 2vh;
     border-radius: 10px;
     cursor: pointer;
 }
@@ -253,9 +254,10 @@ progress::-moz-progress-bar {
 .caterpie {
     background-image: url("../images/pokemon-images/caterpie.png");
     background-size: contain;
-    height: 120%;
-    width: 120%;
-    margin-top: 21%;
+    height: 100%;
+    width: 100%;
+    margin-top: 45%;
+    margin-left: 27%;
 }
 .clefable {
     background-image: url("../images/pokemon-images/clefable.png");
@@ -268,7 +270,8 @@ progress::-moz-progress-bar {
     background-size: contain;
     height: 130%;
     width: 130%;
-    margin-top: 5%;
+    margin-top: 36%;
+    margin-left: 25%;
 }
 .cloyster {
     background-image: url("../images/pokemon-images/cloyster.png");
@@ -292,14 +295,15 @@ progress::-moz-progress-bar {
 .exeggcutor {
     background-image: url("../images/pokemon-images/exeggutor.png");
     background-size: contain;
-    height: 160%;
-    width: 160%;
+    height: 120%;
+    width: 120%;
 }
 .farfetch {
     background-image: url("../images/pokemon-images/farfetch.png");
     background-size: contain;
     height: 130%;
     width: 130%;
+    margin-top: 35%;
 }
 .gastly {
     background-image: url("../images/pokemon-images/gastly.png");
@@ -341,8 +345,8 @@ progress::-moz-progress-bar {
 .Lickitung {
     background-image: url("../images/pokemon-images/lickitung.png");
     background-size: contain;
-    height: 140%;
-    width: 140%;
+    height: 100%;
+    width: 100%;
 }
 .marowak {
     background-image: url("../images/pokemon-images/marowak.png");
@@ -404,6 +408,8 @@ progress::-moz-progress-bar {
     background-size: contain;
     height: 130%;
     width: 130%;
+    margin-top: 22%;
+    margin-left: 10%;
 }
 .omanyte {
     background-image: url("../images/pokemon-images/omanyte.png");
@@ -484,8 +490,8 @@ progress::-moz-progress-bar {
 .snorlax {
     background-image: url("../images/pokemon-images/snorlax.png");
     background-size: contain;
-    height: 140%;
-    width: 140%;
+    height: 120%;
+    width: 120%;
 }
 .starmie {
     background-image: url("../images/pokemon-images/starmie.png");
@@ -502,8 +508,8 @@ progress::-moz-progress-bar {
 .tangela {
     background-image: url("../images/pokemon-images/tangela.png");
     background-size: contain;
-    height: 140%;
-    width: 140%;
+    height: 120%;
+    width: 120%;
 }
 .tentacool{
     background-image: url("../images/pokemon-images/tentacool.png");
