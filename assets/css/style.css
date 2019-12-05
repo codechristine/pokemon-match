@@ -222,6 +222,17 @@ progress::-moz-progress-bar {
     border-radius: 10px;
     cursor: pointer;
 }
+.restartGame {
+    float: right;
+    color: white;
+    font-weight: bold;
+    background-color: red;
+    border-radius: 10px;
+    height: 2vh;
+    margin-top: 11vh;
+    margin-right: 15vw;
+    cursor: pointer;
+}
 
 /**************************************
              POKEMON
@@ -255,8 +266,9 @@ progress::-moz-progress-bar {
 .clefairy {
     background-image: url("../images/pokemon-images/clefairy.png");
     background-size: contain;
-    height: 140%;
-    width: 140%;
+    height: 130%;
+    width: 130%;
+    margin-top: 5%;
 }
 .cloyster {
     background-image: url("../images/pokemon-images/cloyster.png");
@@ -428,6 +440,7 @@ progress::-moz-progress-bar {
     background-size: contain;
     height: 120%;
     width: 120%;
+    margin-top: 21%;
 }
 .scyther {
     background-image: url("../images/pokemon-images/scyther.png");

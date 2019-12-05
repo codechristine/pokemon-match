@@ -313,6 +313,7 @@ function endGame(){
   if(gamesPlayed === 3) {
     $('body').empty();
     $('body').css({ "height": '24vh' });
+    $(button).addClass('restartGame').text('PLAY AGAIN');
     $('body').append(button);
     $(button).on("click", function () {
       window.location.reload();
