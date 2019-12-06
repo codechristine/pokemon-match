@@ -176,7 +176,6 @@ progress::-moz-progress-bar {
 }
 #modalBody {
     position: fixed;
-    /* background-image: url('../images/misc-images/pika-winner.gif'); */
     background-size: contain;
     background-repeat: no-repeat;
     background-color: rgba(255, 255, 255, 0.87);
@@ -203,18 +202,23 @@ progress::-moz-progress-bar {
     text-align: end;
     cursor: pointer;
 }
-.startButton {
+.exitButton {
     display: flex;
     justify-content: center;
     color: white;
     font-weight: bold;
     background-color: red;
-    height: 2vh;
+    height: 4vh;
     width: 5vw;
     margin-top: 5%;
     margin-left: 40%;
     border-radius: 10px;
     cursor: pointer;
+}
+.landscapeNC {
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 25vh;
 }
 .playAgainButton {
     color: white;

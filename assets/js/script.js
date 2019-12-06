@@ -127,10 +127,11 @@ function loadIntro(){
     $('#modalShadow').removeClass('hidden').css({ 'background-color': '#83d183'});
     $('#modalBody').css({ 'background-image': 'url("assets/images/misc-images/pika-intro-four.gif")' });
     $('#modalContent').css({ 'font-size': '2rem', 'width': '70%', 'left': '50%', 'top': '35vh', 'text-align': 'center'}).text('This game is best played in portrait mode.');
-    $(button).addClass('.startButton').text('start game');
+    $(button).addClass('exitButton').text('EXIT');
     $('#modalContent').append(button);
     $(button).on("click", function () {
-      $('#modalShadow').addClass('hidden');
+      $('body').empty();
+      $('body').addClass('landscapeNC').text('Please switch to portrait mode to play');
     });
   }
 }
