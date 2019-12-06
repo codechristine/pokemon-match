@@ -119,7 +119,7 @@ function initializeApp() {
 function loadIntro(){
   var windowSize = self.outerWidth;
   if(windowSize >= 453) {
-    if ( windowSize === 768 || windowSize >= 1024 ) {
+    if ( windowSize === 768 || windowSize > 1024 ) {
       $('modalShadow').addClass('hidden');
       return;
     }
