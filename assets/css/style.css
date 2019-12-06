@@ -6,6 +6,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
+    /* overflow: hidden; */
 }
 body::after {
     position: absolute;
@@ -175,7 +176,7 @@ progress::-moz-progress-bar {
 }
 #modalBody {
     position: fixed;
-    background-image: url('../images/misc-images/pika-winner.gif');
+    /* background-image: url('../images/misc-images/pika-winner.gif'); */
     background-size: contain;
     background-repeat: no-repeat;
     background-color: rgba(255, 255, 255, 0.87);
@@ -508,8 +509,8 @@ progress::-moz-progress-bar {
 .staryu {
     background-image: url("../images/pokemon-images/staryu.png");
     background-size: contain;
-    height: 140%;
-    width: 140%;
+    height: 130%;
+    width: 130%;
 }
 .tangela {
     background-image: url("../images/pokemon-images/tangela.png");
@@ -521,14 +522,14 @@ progress::-moz-progress-bar {
 .tentacool{
     background-image: url("../images/pokemon-images/tentacool.png");
     background-size: contain;
-    height: 130%;
-    width: 130%;
+    height: 120%;
+    width: 120%;
 }
 .tentacruel {
     background-image: url("../images/pokemon-images/tentacruel.png");
     background-size: contain;
-    height: 130%;
-    width: 130%;
+    height: 120%;
+    width: 120%;
 }
 .e {
     background-image: url("../images/unown-images/e.png");
