@@ -3,7 +3,7 @@ $(document).ready(initializeApp);
 var firstCardClicked = null;
 var secondCardClicked = null;
 var matches = null;
-var maxMatches = 9;
+var maxMatches = 1;
 var attempts = 0;
 var gamesPlayed = 0;
 var currentRound = -1;
@@ -110,42 +110,30 @@ var rounds = [
 ]
 
 function initializeApp() {
+  loadIntro();
   resetAndLoadRound();
   shuffle();
   $('#modalNext').click(resetGame);
 }
 
-// function loadIntro(){
-//   console.log(gamesPlayed);
-//   if(gamesPlayed === 0){
-//     $('#modalShadow').removeClass('hidden');
-//     $('#modalBody').css({ 'background-image': 'url("assets/images/misc-images/pika-intro-four.gif")' });
-//     $('#modalContent').css({ 'width': '70%', 'left': '50%', 'top': '35vh', 'text-align': 'center'}).text('This game is best played in portrait mode.');
-//     $(button).addClass('.startButton').text('start game');
-//     $(button).addClass('startButton').text('PLAY')
-//     $('#modalContent').append(button);
-//     $(button).on("click", function () {
-//       $('#modalShadow').addClass('hidden');
-//     });
-//   }
-// }
-
-// function loadIntro() {
-//   $('body').css({ 'background-image': 'url("assets/images/misc-images/pika-intro-one.gif")', 'opacity': '0', 'height': '45vh' })
-//   $(button).addClass('startButton').text('start game');
-//   $('body').append(button);
-//   $(button).on('click', function(){
-//     resetAndLoadRound();
-//     shuffle();
-//     $('#modalNext').click(resetGame);
-//   });
-// }
-
-// function loadFirstRound() {
-//   resetAndLoadRound();
-//   shuffle();
-//   $('#modalNext').click(resetGame);
-// }
+function loadIntro(){
+  var windowSize = self.outerWidth;
+  if(windowSize >= 453) {
+    if ( windowSize === 768 || windowSize === 1024) {
+      $('modalShadow').addClass('hidden');
+      return;
+    }
+    $('#modalShadow').removeClass('hidden').css({ 'background-color': '#83d183'});
+    $('#modalBody').css({ 'background-image': 'url("assets/images/misc-images/pika-intro-four.gif")' });
+    $('#modalContent').css({ 'font-size': '2rem', 'width': '70%', 'left': '50%', 'top': '35vh', 'text-align': 'center'}).text('This game is best played in portrait mode.');
+    $(button).addClass('exitButton').text('EXIT');
+    $('#modalContent').append(button);
+    $(button).on("click", function () {
+      $('body').empty();
+      $('body').addClass('landscapeNC').text('Please switch to portrait mode to play');
+    });
+  }
+}
 
 function resetAndLoadRound() {
   currentRound++;
@@ -205,6 +193,7 @@ function handleCardClick(event) {
 function allCardsAreMatched() {
   if (matches == maxMatches)
     $('#modalShadow').removeClass('hidden');
+    $('#modalBody').css({ 'background-image': 'url("assets/images/misc-images/pika-winner.gif")' });
 }
 
 function clickedCard() {
