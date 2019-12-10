@@ -260,7 +260,20 @@ progress::-moz-progress-bar {
     font-size: 4rem;
 }
 #modalNext {
+    background-color: transparent;
+    border: none;
     color: red;
+    margin: 10px;
+    font-size: 1.5rem;
+    margin-top: 20%;
+    text-align: end;
+    cursor: pointer;
+}
+.modalNext {
+    background-color: transparent;
+    border: none;
+    color: red;
+    margin: 10px;
     font-size: 1.5rem;
     margin-top: 20%;
     text-align: end;
