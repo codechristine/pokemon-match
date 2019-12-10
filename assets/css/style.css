@@ -159,7 +159,7 @@ main {
     margin: 1vh;
 }
 .healthContainer {
-    height: 3.3vh;
+    height: 3.5vh;
     width: 35vw;
     padding: 1%;
     /* margin: 9vh; */
@@ -298,12 +298,17 @@ progress::-moz-progress-bar {
     font-weight: bold;
     background-color: red;
     border-radius: 10px;
-    height: 2vh;
+    height: 2rem;
     margin-top: 11vh;
     margin-right: 15vw;
     cursor: pointer;
 }
-
+.endDialogue {
+    text-align: center;
+    height: 18rem;
+    margin-top: 2%;
+    font-size: 5rem;
+}
 /**************************************
              POKEMON
 **************************************/

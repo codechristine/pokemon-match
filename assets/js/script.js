@@ -305,9 +305,10 @@ function endGame(){
   if(gamesPlayed === 3) {
     $('body').empty();
     $('body').css({ 'height': '0px' });
-    var dialogue = $('.dialogue').css({ 'background-image': 'url("assets/images/misc-images/pika-end.gif")'}).text('You caught all the Pokemon!');
+    var endDialogue = $('<div>').addClass('endDialogue').text('You caught all the Pokemon!');
     $(button).addClass('restartGame').text('PLAY AGAIN');
-    $('body').append(button, dialogue);
+    $('body').append(button);
+    $('body').append(endDialogue);
     $(button).on("click", function () {
       window.location.reload();
     });
