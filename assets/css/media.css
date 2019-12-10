@@ -7,16 +7,84 @@
   /* .opponentHEalthContainer {
     margin-top: -2vh;
   } */
+}
+
+/**************************************
+              BIG TABLETS
+**************************************/
+
+/* big tablets to 1024 pixels */
+@media only screen and (min-width: 768px) {
+  .healthContainer {
+    width: 35vw;
+    height: 2.5vh;
+    margin-top: 11vh;
+  }
+  .ash {
+    height: 27rem;
+  }
+  .dialogue {
+    margin-top: -2vh;
+    font-size: 2.8rem;
+  }
+}
+
+/*big tablets to 1024 pixels landscape */
+@media only screen and (max-width: 1024px) and (orientation: landscape){
   .topContainer {
+    margin-top: 1%;
+  }
+  .opponentHealthContainer {
+    width: 30vw;
+    margin-top: 2vh;
+  }
+  .healthContainer {
+    width: 32vw;
+    height: 6.3vh;
+    margin-top: 12vh;
+  }
+  .gamesPlayed,
+  .playedNum,
+  .gamesAccuracy,
+  .accuracyNum {
+    line-height: 2.8rem;
+  }
+  .ash {
+    height: 14rem;
+  }
+  .dialogue {
+    font-size: 1.8rem;
+    margin: 16%;
+    padding: 2%;
+    margin-top: -23vh;
+    width: 33vw;
+    margin-left: 59vw;
+  }
+}
+
+/**************************************
+        DESKTOP/LAPTOP TABLETS
+**************************************/
+
+/* laptops/desktop */
+@media only screen and (min-width: 1025px) {
+   .topContainer {
     margin-top: 3%;
     margin-left: 8vw;
+  }
+  .gameContainer {
+    height: 50vh;
   }
   .opponentHp {
     font-size: 2rem;
   }
-  .opponentHEalthBar {
+  .opponentHealthBar {
     width: 19vw;
     margin-top: 1.2%;
+  }
+  .opponentHealthContainer {
+    width: 20vw;
+    margin-top: 0px;
   }
   .statsContainer {
     font-size: 1.8rem;
@@ -29,13 +97,13 @@
     line-height: 3.2rem;
   }
   main {
-    width: 82vw;
+    width: 57vw;
   }
   .ash {
-    height: 19rem;
+    height: 24rem;
   }
   .healthContainer {
-    width: 20vw;
+    width: 19vw;
     margin-top: 18vh;
     margin-left: 0px;
   }
@@ -46,41 +114,12 @@
     font-size: 2.2rem;
     margin: 0px;
     margin-top: -26vh;
-    margin-left: 48vw;
-    width: 42vw;
-  }
-}
-
-/**************************************
-              BIG TABLETS
-**************************************/
-
-/* big tablets to 1024 pixels */
-@media only screen and (min-width: 768px) {
-  .hovereffect h3 {
-    font-size: 1.7rem;
-    padding: 0px;
-  }
-  .hovereffect a, .hovereffect p {
-    margin-top: 0px;
-  }
-}
-
-/**************************************
-        DESKTOP/LAPTOP TABLETS
-**************************************/
-
-/* laptops/desktop */
-@media only screen and (min-width: 1025px) {
-  .hovereffect h3 {
-    font-size: 1.8rem;
+    margin-left: 52vw;
+    width: 38vw;
   }
 }
 
 @media only screen and (min-width: 1400px) {
-  .hovereffect h3 {
-    font-size: 2.2rem;
-  }
 }
 
 /**************************************
@@ -102,7 +141,7 @@
     text-align: center;
   }
 }
-/* @media only screen
+@media only screen
 and (max-width: 823px)
 and (max-height: 414px)
 and (orientation: landscape) {
@@ -118,4 +157,4 @@ and (orientation: landscape) {
   .accuracyNum {
     line-height: 3.2rem;
   }
-} */
+}
