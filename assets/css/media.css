@@ -4,11 +4,11 @@
 
 /* small tablets to 768 pixels */
 @media only screen and (min-width: 600px) {
-  .healthContainer {
+  /* .healthContainer {
     height: 6.5vh;
     width: 31vw;
     margin-top: 4rem;
-  }
+  } */
 }
 
 /**************************************
@@ -45,40 +45,40 @@
   /* body {
     height: 0px;
   } */
-  .topContainer {
+  /* .topContainer {
     margin-top: 2%;
-  }
-  .opponentHealthContainer {
+  } */
+  /* .opponentHealthContainer {
     margin-bottom: 0px;
     margin-top: 0px;
-  }
-  .opponentHp {
+  } */
+  /* .opponentHp {
     font-size: 1.5rem;
-  }
-  progress {
+  } */
+  /* progress {
     height: 1em;
-  }
-  .hp {
+  } */
+  /* .hp {
     font-size: 1.5rem;
-  }
-  .statsContainer {
+  } */
+  /* .statsContainer {
     font-size: 1.8rem;
-  }
-  .gamesPlayed,
+  } */
+  /* .gamesPlayed,
   .playedNum,
   .gamesAccuracy,
   .accuracyNum {
     line-height: 1.8rem;
-  }
-  .ash {
+  } */
+  /* .ash {
     height: 11rem;
-  }
-  .dialogue {
-    font-size: 1.4rem;
-    margin: 0px;
+  } */
+  /* .dialogue { */
+    /* font-size: 1.4rem; */
+    /* margin: 0px;
     margin-top: -8rem;
-    margin-left: 56vw;
-  }
+    margin-left: 56vw; */
+  /* } */
   #modalBody {
     width: 50vw;
   }

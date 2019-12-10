@@ -182,7 +182,7 @@ function loadCurrentRound() {
 function addCardToGameArea(pokemonClass, pokemonType) {
   var card = $('<div>').addClass('card');
   var pokeball = $('<div>').addClass('pokeball').attr('dataPokemon', pokemonType);
-  var pokemon = $('<div>').addClass(pokemonClass).css({ 'margin-top': '25%' });
+  var pokemon = $('<div>').addClass(pokemonClass).addClass("pokemon");
 
   card.append(pokeball, pokemon);
   $('#pokemonArena').append(card);
