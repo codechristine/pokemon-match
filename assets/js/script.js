@@ -212,7 +212,7 @@ function clickedCard() {
   if (urlFirstCard === urlSecondCard) {
     $('.pokeball').addClass('avoidClicks');
     pokemonCount++;
-    $('#modalContent').text('Caught all ' + pokemonCount+'!');
+    $('#modalContent').text('Caught all ' + pokemonCount+ ' Pokemon!');
     $(button).addClass('modalNext').text('NEXT >');
     $('#modalContent').append(button);
     $(button).click(resetGame);
