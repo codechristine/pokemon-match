@@ -3,7 +3,7 @@ $(document).ready(initializeApp);
 var firstCardClicked = null;
 var secondCardClicked = null;
 var matches = null;
-var maxMatches = 9;
+var maxMatches = 1;
 var attempts = 0;
 var gamesPlayed = 0;
 var currentRound = -1;
@@ -102,7 +102,7 @@ var rounds = [
   //   ]
   // },
   {
-    background: 'assets/images/misc-images/pika-end.gif',
+    background: 'assets/images/misc-images/pika-end-winner.gif',
     pokemon: [
       { pokemonType: 'end', front: 'end'}
     ]
@@ -110,31 +110,31 @@ var rounds = [
 ]
 
 function initializeApp() {
-  loadIntro();
+  // loadIntro();
   resetAndLoadRound();
   shuffle();
   $('#modalNext').click(resetGame);
 }
 
-function loadIntro(){
-  var windowSize = self.outerWidth;
-  if(windowSize >= 453) {
-    if ( windowSize === 768 || windowSize > 1024 ) {
-      $('modalShadow').addClass('hidden');
-      return;
-    }
-    $('#modalShadow').removeClass('hidden').css({ 'background-color': '#83d183'});
-    $('#modalBody').css({ 'background-image': 'url("assets/images/misc-images/pika-intro-four.gif")' });
-    $('#modalContent').css({ 'font-size': '2rem', 'width': '70%', 'left': '50%', 'top': '35vh', 'text-align': 'center'}).text('This game is best played in portrait mode.');
-    $(button).addClass('exitButton').text('EXIT');
-    $('#modalContent').append(button);
-    $(button).on("click", function () {
-      $('body').empty();
-      $('body').addClass('landscapeNC').text('Please switch to portrait mode to play');
-    });
-  }
-}
-
+// function loadIntro(){
+//   var windowSize = self.outerWidth;
+//   console.log(windowSize);
+//   if(windowSize >= 453) {
+//     if ( windowSize === 768 || windowSize > 1024 ) {
+//       $('modalShadow').addClass('hidden');
+//       return;
+//     }
+//     $('#modalShadow').removeClass('hidden').css({ 'background-color': '#83d183'});
+//     $('#modalBody').css({ 'background-image': 'url("assets/images/misc-images/pika-intro-four.gif")' });
+//     $('#modalContent').css({ 'font-size': '2rem', 'width': '70%', 'left': '50%', 'top': '35vh', 'text-align': 'center'}).text('This game is best played in portrait mode.');
+//     $(button).addClass('exitButton').text('EXIT');
+//     $('#modalContent').append(button);
+//     $(button).on("click", function () {
+//       $('body').empty();
+//       $('body').addClass('landscapeNC').text('Please switch to portrait mode to play');
+//     });
+//   }
+// }
 
 function resetAndLoadRound() {
   currentRound++;
@@ -213,6 +213,8 @@ function clickedCard() {
     attempts++;
     allCardsAreMatched()
     displayStats()
+    var opponentHealthBar = document.getElementById("opponentHealthBar");
+    opponentHealthBar.value -= 10;
     firstCardClicked = null;
     secondCardClicked = null;
     setTimeout(function () {
@@ -229,7 +231,7 @@ function clickedCard() {
     if (healthBar.value === 0) {
       $('#modalShadow').removeClass('hidden');
       $('#modalBody').css({'background-image': 'url("assets/images/misc-images/pika-loser.png")'});
-      $('#modalContent').css({ 'left': '38vw', 'top': '34vh' }).text('No Pokemon Caught');
+      $('#modalContent').text('No Pokemon Caught');
       $(button).addClass('playAgainButton').text('PLAY AGAIN')
       $('#modalContent').append(button);
       $(button).on("click", function () {
@@ -273,8 +275,10 @@ function resetStats() {
 }
 
 function resetHealthBar() {
-  var healthBar = document.getElementById("healthBar");
+  var healthBar = document.getElementById('healthBar');
+  var opponentHealthBar = document.getElementById('opponentHealthBar');
   healthBar.value = 100;
+  opponentHealthBar.value = 100;
 }
 
 // function makeNewPosition() {
@@ -300,9 +304,11 @@ function resetHealthBar() {
 function endGame(){
   if(gamesPlayed === 3) {
     $('body').empty();
-    $('body').css({ "height": '24vh' });
+    $('body').css({ 'height': '0px' });
+    var endDialogue = $('<div>').addClass('endDialogue').text('You caught all the Pokemon!');
     $(button).addClass('restartGame').text('PLAY AGAIN');
     $('body').append(button);
+    $('body').append(endDialogue);
     $(button).on("click", function () {
       window.location.reload();
     });
