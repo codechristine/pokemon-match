@@ -6,6 +6,7 @@ var matches = null;
 var maxMatches = 9;
 var attempts = 0;
 var gamesPlayed = 0;
+var pokemonCount = 0;
 var currentRound = -1;
 var button = $('<button>');
 var rounds = [
@@ -113,7 +114,7 @@ function initializeApp() {
   // loadIntro();
   resetAndLoadRound();
   shuffle();
-  $('#modalNext').click(resetGame);
+  $('.modalNext').click(resetGame);
 }
 
 // function loadIntro(){
@@ -139,6 +140,7 @@ function initializeApp() {
 function resetAndLoadRound() {
   currentRound++;
   $('#pokemonArena').empty();
+  $('.playedNum').text('1 of 3');
   shuffle();
   loadCurrentRound();
   $('.pokeball').on('click', handleCardClick);
@@ -195,7 +197,7 @@ function allCardsAreMatched() {
   if (matches == maxMatches)
     $('#modalShadow').removeClass('hidden');
     $('#modalBody').css({ 'background-image': 'url("assets/images/misc-images/pika-winner.gif")' });
-}
+  }
 
 function clickedCard() {
   if (firstCardClicked == null) {
@@ -208,7 +210,12 @@ function clickedCard() {
   var urlSecondCard = secondCardClicked.attr('dataPokemon');
 
   if (urlFirstCard === urlSecondCard) {
-    $('.pokeball').addClass('avoidClicks')
+    $('.pokeball').addClass('avoidClicks');
+    pokemonCount++;
+    $('#modalContent').text('Caught all ' + pokemonCount+'!');
+    $(button).addClass('modalNext').text('NEXT >');
+    $('#modalContent').append(button);
+    $(button).click(resetGame);
     matches++;
     attempts++;
     allCardsAreMatched()
@@ -229,10 +236,15 @@ function clickedCard() {
     var healthBar = document.getElementById("healthBar");
     healthBar.value -= 10;
     if (healthBar.value === 0) {
+      if (pokemonCount === 0) {
+        $('#modalContent').text('No Pokemon Caught.');
+      } else {
+        pokemonCount++;
+        $('#modalContent').text('Only ' + pokemonCount + ' Pokemon Caught.');
+      }
       $('#modalShadow').removeClass('hidden');
       $('#modalBody').css({'background-image': 'url("assets/images/misc-images/pika-loser.png")'});
-      $('#modalContent').text('No Pokemon Caught');
-      $(button).addClass('playAgainButton').text('PLAY AGAIN')
+      $(button).addClass('playAgainButton').text('PLAY AGAIN');
       $('#modalContent').append(button);
       $(button).on("click", function () {
         window.location.reload();
