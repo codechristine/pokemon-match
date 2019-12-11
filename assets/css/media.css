@@ -4,11 +4,11 @@
 
 /* small tablets to 768 pixels */
 @media only screen and (min-width: 600px) {
-  .healthContainer {
+  /* .healthContainer {
     height: 6.5vh;
     width: 31vw;
     margin-top: 4rem;
-  }
+  } */
 }
 
 /**************************************
@@ -45,56 +45,56 @@
   /* body {
     height: 0px;
   } */
-  .topContainer {
+  /* .topContainer {
     margin-top: 2%;
-  }
-  .opponentHealthContainer {
+  } */
+  /* .opponentHealthContainer {
     margin-bottom: 0px;
     margin-top: 0px;
-  }
-  .opponentHp {
+  } */
+  /* .opponentHp {
     font-size: 1.5rem;
-  }
-  progress {
+  } */
+  /* progress {
     height: 1em;
-  }
-  .hp {
+  } */
+  /* .hp {
     font-size: 1.5rem;
-  }
-  .statsContainer {
+  } */
+  /* .statsContainer {
     font-size: 1.8rem;
-  }
-  .gamesPlayed,
+  } */
+  /* .gamesPlayed,
   .playedNum,
   .gamesAccuracy,
   .accuracyNum {
     line-height: 1.8rem;
-  }
-  .ash {
+  } */
+  /* .ash {
     height: 11rem;
-  }
-  .dialogue {
-    font-size: 1.4rem;
-    margin: 0px;
+  } */
+  /* .dialogue { */
+    /* font-size: 1.4rem; */
+    /* margin: 0px;
     margin-top: -8rem;
-    margin-left: 56vw;
-  }
-  #modalBody {
+    margin-left: 56vw; */
+  /* } */
+  /* #modalBody {
     width: 50vw;
-  }
-  #modalContent {
+  } */
+  /* #modalContent {
     left: 42vw;
     top: 31vh;
     font-size: 2rem;
-  }
+  } */
 }
 
 /*big tablets and phones*/
 @media only screen and (max-width: 1024px) and (min-height: 768px) {
-  .topContainer {
+  /* .topContainer {
     margin-top: 1%;
-  }
-  .opponentHealthContainer {
+  } */
+  /* .opponentHealthContainer {
     width: 30vw;
     margin-top: 2vh;
   }
@@ -120,17 +120,17 @@
     margin-top: -10rem;
     width: 33vw;
     margin-left: 59vw;
-  }
-  #modalBody {
+  } */
+  /* #modalBody {
     width: 50vw;
   }
   #modalContent {
     left: 17rem;
     top: 36rem;
-  }
+  } */
 }
  /*big tablets and landscape */
-@media only screen and (max-width: 1024px) and (min-height: 768px) and (orientation: landscape) {
+/* @media only screen and (max-width: 1024px) and (min-height: 768px) and (orientation: landscape) {
   .healthContainer {
     width: 34vw;
     height: 4.3vh;
@@ -151,7 +151,7 @@
     left: 31rem;
     top: 30vh;
   }
-}
+} */
 
 /**************************************
         DESKTOP/LAPTOP TABLETS
@@ -162,7 +162,7 @@
   /* body {
     height: 0px;
   } */
-  .topContainer {
+  /* .topContainer {
     margin-top: 3%;
     margin-left: 8vw;
   }
@@ -210,7 +210,7 @@
     margin-left: 54vw;
     width: 35vw;
   }
-}
+} */
 
 @media only screen and (min-width: 1400px) {
 }
@@ -220,7 +220,7 @@
 **************************************/
 
 @media only screen and (max-width: 812) and (max-height: 414px) and (orientation: landscape) {
-  #modalShadow {
+  /* #modalShadow {
     background-color: #83d183;
   }
   #modalBody {
@@ -261,7 +261,7 @@
     margin-top: -33vh;
     width: 0px;
     margin-left: 59vw;
-  }
+  } */
 }
 /* @media only screen
 and (max-height: 414px)
