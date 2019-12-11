@@ -14,6 +14,7 @@ body::after {
     content: "";
     background-color: white;
     background-size: cover;
+    min-height: 100vh;
     opacity: 0.4;
     top: 0;
     left: 0;
@@ -155,6 +156,7 @@ main {
 .pokemon {
     height: 100%;
     width: 86%;
+    background: no-repeat;
 }
 .pokeball:hover {
     transform: scale(1.5);
@@ -269,10 +271,13 @@ progress::-moz-progress-bar {
 }
 #modalContent {
     position: absolute;
-    left: 28vw;
-    top: 36vh;
+    left: 42vw;
+    top: 31vh;
+    font-size: 2rem;
+    /* left: 28vw;
+    top: 36vh; */
     transform: translate(-50%, -50%);
-    font-size: 4rem;
+    /* font-size: 4rem; */
 }
 #modalNext {
     background-color: transparent;
