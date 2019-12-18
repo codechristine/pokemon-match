@@ -196,6 +196,9 @@ progress {
 .opponentHp {
     font-size: 2.5rem;
 }
+.opponentHealthBar {
+    margin-top: 2.5%;
+}
 .healthContainer {
     width: 31.5vw;
     margin-top: 11rem;
@@ -205,6 +208,9 @@ progress {
 }
 .healthBar {
     margin-top: 1.5%;
+}
+progress {
+    width: 25em;
 }
 .gameContainer {
     margin-top: 2%;
@@ -217,6 +223,8 @@ progress {
 }
 .dialogue {
     margin-top: 6%;
+    font-size: 2.5rem;
+    height: 6rem;
 }
 .card {
     height: 57%;

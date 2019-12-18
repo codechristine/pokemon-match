@@ -349,363 +349,180 @@ progress::-moz-progress-bar {
 .abra {
     background-image: url("../images/pokemon-images/abra.png");
     background-size: contain;
-    /* height: 100%;
-    width: 100%; */
 }
 .alakazam {
     background-image: url("../images/pokemon-images/alakazam.png");
     background-size: contain;
-    /* height: 160%;
-    width: 160%; */
 }
 .caterpie {
     background-image: url("../images/pokemon-images/caterpie.png");
     background-size: contain;
-    /* height: 95%;
-    width: 95%;
-    margin-left: 27%; */
 }
 .clefable {
     background-image: url("../images/pokemon-images/clefable.png");
     background-size: contain;
-    /* height: 140%;
-    width: 140%; */
 }
 .clefairy {
     background-image: url("../images/pokemon-images/clefairy.png");
     background-size: contain;
-    /* height: 130%;
-    width: 130%;
-    margin-top: 36%;
-    margin-left: 25%; */
 }
 .cloyster {
     background-image: url("../images/pokemon-images/cloyster.png");
     background-size: contain;
-    /* height: 120%;
-    width: 120%; */
 }
 .cubone {
     background-image: url("../images/pokemon-images/cubone.png");
     background-size: contain;
-    /* height: 130%;
-    width: 130%;
-    margin-top: 23%; */
 }
 .dewgong {
     background-image: url("../images/pokemon-images/dewgong.png");
     background-size: contain;
-    /* height: 120%;
-    width: 120%; */
 }
 .exeggcutor {
     background-image: url("../images/pokemon-images/exeggutor.png");
     background-size: contain;
-    /* height: 120%;
-    width: 120%;
-    margin-top: 25%; */
 }
 .farfetch {
     background-image: url("../images/pokemon-images/farfetch.png");
     background-size: contain;
-    /* height: 100%;
-    width: 130%;
-    margin-top: 35%; */
 }
 .gastly {
     background-image: url("../images/pokemon-images/gastly.png");
     background-size: contain;
-    /* height: 130%;
-    width: 130%; */
 }
 .gengar {
     background-image: url("../images/pokemon-images/gengar.png");
     background-size: contain;
-    /* height: 140%;
-    width: 140%;
-    margin-top: 25%; */
 }
 .golduck {
     background-image: url("../images/pokemon-images/golduck.png");
     background-size: contain;
-    /* height: 140%;
-    width: 140%; */
 }
 .gyarados {
     background-image: url("../images/pokemon-images/gyarados.png");
     background-size: contain;
-    /* height: 150%;
-    width: 150%; */
 }
 .horsea {
     background-image: url("../images/pokemon-images/horsea.png");
     background-size: contain;
-    /* height: 130%;
-    width: 130%;
-    margin-top: 18%; */
 }
 .jigglypuff {
     background-image: url("../images/pokemon-images/Jigglypuff.png");
     background-size: contain;
-    /* height: 130%;
-    width: 130%;
-    margin-top: 25%; */
 }
 .Lickitung {
     background-image: url("../images/pokemon-images/lickitung.png");
     background-size: contain;
-    /* height: 120%;
-    width: 120%;
-    margin-top: 25%; */
 }
 .marowak {
     background-image: url("../images/pokemon-images/marowak.png");
     background-size: contain;
-    /* height: 140%;
-    width: 140%;
-    margin-top: 10%; */
 }
 .meowth {
     background-image: url("../images/pokemon-images/meowth.png");
     background-size: contain;
-    /* height: 140%;
-    width: 140%; */
 }
 .kabuto {
     background-image: url("../images/pokemon-images/kabuto.png");
     background-size: contain;
-    /* height: 130%;
-    width: 130%; */
 }
 .kabutops {
     background-image: url("../images/pokemon-images/kabutops.png");
     background-size: contain;
-    /* height: 140%;
-    width: 140%; */
 }
 .kingler {
     background-image: url("../images/pokemon-images/kingler.png");
     background-size: contain;
-    /* height: 150%;
-    width: 150%; */
 }
 .krabby {
     background-image: url("../images/pokemon-images/krabby.png");
     background-size: contain;
-    /* height: 140%;
-    width: 140%; */
 }
 .magikarp {
     background-image: url("../images/pokemon-images/magikarp.png");
     background-size: contain;
-    /* height: 140%;
-    width: 140%; */
 }
 .nidorina {
     background-image: url("../images/pokemon-images/nidorina.png");
     background-size: contain;
-    /* height: 140%;
-    width: 140%; */
 }
 .nidoqueen {
     background-image: url("../images/pokemon-images/nidoqueen.png");
     background-size: contain;
-    /* height: 140%;
-    width: 140%; */
 }
 .oddish {
     background-image: url("../images/pokemon-images/oddish.png");
     background-size: contain;
-    /* height: 130%;
-    width: 130%;
-    margin-top: 22%;
-    margin-left: 10%; */
 }
 .omanyte {
     background-image: url("../images/pokemon-images/omanyte.png");
     background-size: contain;
-    /* height: 140%;
-    width: 140%; */
 }
 .omastar {
     background-image: url("../images/pokemon-images/omastar.png");
     background-size: contain;
-    /* height: 150%;
-    width: 150%; */
 }
 .persian {
     background-image: url("../images/pokemon-images/persian.png");
     background-size: contain;
-    /* height: 130%;
-    width: 130%; */
 }
 .psyduck {
     background-image: url("../images/pokemon-images/psyduck.png");
     background-size: contain;
-    /* height: 140%;
-    width: 140%; */
 }
 .poliwag{
     background-image: url("../images/pokemon-images/poliwag.png");
     background-size: contain;
-    /* height: 130%;
-    width: 130%; */
 }
 .poliwhirl {
     background-image: url("../images/pokemon-images/poliwhirl.png");
     background-size: contain;
-    /* height: 120%;
-    width: 120%;
-    margin-top: 21%; */
 }
 .scyther {
     background-image: url("../images/pokemon-images/scyther.png");
     background-size: contain;
-    /* height: 100%;
-    width: 100%; */
-    /* margin-top: 25%; */
 }
 .seadra {
     background-image: url("../images/pokemon-images/seadra.png");
     background-size: contain;
-    /* height: 150%;
-    width: 150%;
-    margin-top: 14%; */
 }
 .seel {
     background-image: url("../images/pokemon-images/seel.png");
     background-size: contain;
-    /* height: 130%;
-    width: 130%; */
 }
 .shellder {
     background-image: url("../images/pokemon-images/shellder.png");
     background-size: contain;
-    /* height: 110%;
-    width: 110%;
-    margin-top: 25%;
-    margin-left: 17%; */
 }
 .slowbro {
     background-image: url("../images/pokemon-images/slowbro.png");
     background-size: contain;
-    /* height: 130%;
-    width: 130%;
-    margin-top: 25%; */
 }
 .slowpoke {
     background-image: url("../images/pokemon-images/slowpoke.png");
     background-size: contain;
-    /* height: 140%;
-    width: 140%; */
 }
 .snorlax {
     background-image: url("../images/pokemon-images/snorlax.png");
     background-size: contain;
-    /* height: 120%;
-    width: 120%;
-    margin-top: 27%; */
 }
 .starmie {
     background-image: url("../images/pokemon-images/starmie.png");
     background-size: contain;
-    /* height: 140%;
-    width: 140%; */
 }
 .staryu {
     background-image: url("../images/pokemon-images/staryu.png");
     background-size: contain;
-    /* height: 130%;
-    width: 130%; */
 }
 .tangela {
     background-image: url("../images/pokemon-images/tangela.png");
     background-size: contain;
-    /* height: 120%;
-    width: 120%;
-    margin-top: 25%; */
 }
 .tentacool{
     background-image: url("../images/pokemon-images/tentacool.png");
     background-size: contain;
-    /* height: 120%;
-    width: 120%; */
 }
 .tentacruel {
     background-image: url("../images/pokemon-images/tentacruel.png");
     background-size: contain;
-    /* height: 120%;
-    width: 120%; */
 }
-/* .e {
-    background-image: url("../images/unown-images/e.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 100%;
-    width: 55%;
-    margin-top: 32%;
-    margin-left: 35%;
-}
-.k {
-    background-image: url("../images/unown-images/k.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 100%;
-    width: 55%;
-    margin-top: 32%;
-    margin-left: 35%;
-}
-.m {
-    background-image: url("../images/unown-images/m.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 100%;
-    width: 55%;
-    margin-top: 32%;
-    margin-left: 35%;
-}
-.n {
-    background-image: url("../images/unown-images/n.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 100%;
-    width: 55%;
-    margin-top: 32%;
-    margin-left: 35%;
-}
-.o {
-    background-image: url("../images/unown-images/o.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 100%;
-    width: 55%;
-    margin-top: 32%;
-    margin-left: 35%;
-}
-.p {
-    background-image: url("../images/unown-images/p.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 100%;
-    width: 55%;
-    margin-top: 32%;
-    margin-left: 35%;
-}
-.exclam {
-    background-image: url("../images/unown-images/exclam.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 100%;
-    width: 55%;
-    margin-top: 32%;
-    margin-left: 35%;
-}
-.dash {
-    background-image: url("../images/unown-images/dash.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 100%;
-    width: 55%;
-    margin-top: 32%;
-    margin-left: 35%;
-} */
