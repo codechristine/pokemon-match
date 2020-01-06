@@ -79,29 +79,6 @@ var rounds = [
       { pokemonType: 'tentacool', front: 'tentacruel' },
     ]
   },
-  // {
-  //   background: 'assets/images/background-images/bg-unownDungeon.png',
-  //   pokemon: [
-  //     { pokemonType: 'p', front: 'p' },
-  //     { pokemonType: 'p', front: 'p' },
-  //     { pokemonType: 'o', front: 'o' },
-  //     { pokemonType: 'o', front: 'o' },
-  //     { pokemonType: 'k', front: 'k' },
-  //     { pokemonType: 'k', front: 'k' },
-  //     { pokemonType: 'e', front: 'e' },
-  //     { pokemonType: 'e', front: 'e' },
-  //     { pokemonType: 'm', front: 'm' },
-  //     { pokemonType: 'm', front: 'm' },
-  //     { pokemonType: 'o', front: 'o' },
-  //     { pokemonType: 'o', front: 'o' },
-  //     { pokemonType: 'n', front: 'n' },
-  //     { pokemonType: 'n', front: 'n' },
-  //     { pokemonType: 'exclam', front: 'exclam' },
-  //     { pokemonType: 'exclam', front: 'exclam' },
-  //     { pokemonType: 'dash', front: 'dash' },
-  //     { pokemonType: 'dash', front: 'dash' },
-  //   ]
-  // },
   {
     background: 'assets/images/misc-images/pika-end-winner.gif',
     pokemon: [
