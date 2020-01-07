@@ -1,0 +1,170 @@
+/**************************************
+            IPAD PORTRAIT
+**************************************/
+/* @media only screen and (min-width: 768px) and (min-height: 1024px){ */
+@media only screen and (min-width: 768px) and (min-height: 1023px) and (orientation: portrait) {
+
+.healthContainer {
+    height: 5.5vh;
+}
+.gameContainer {
+  height: 62%;
+  margin-top: 5%;
+}
+.card {
+  height: 16%;
+  width: 16%;
+}
+}
+
+/**************************************
+        IPAD PRO LANDSCAPE
+**************************************/
+/* @media only screen and (max-width: 1025px) and (min-height: 1024px){ */
+@media only screen and (min-width: 1366px) and (orientation: landscape) {
+
+.topContainer {
+    margin-top: 5%;
+}
+.healthBar {
+    margin-top: 5.5%;
+}
+.healthContainer {
+    width: 40vw;
+    margin-top: 10rem;
+}
+.gameContainer {
+    margin-top: 5%;
+}
+.card {
+    height: 36%;
+    width: 11%;
+}
+progress {
+    width: 23em;
+}
+.ash {
+    height: 18rem;
+}
+.dialogue {
+    margin-top: 10%;
+    font-size: 1.7rem;
+    height: 7vh;
+}
+}
+
+/**************************************
+            MOBILE PORTRAIT
+**************************************/
+/* @media only screen and (max-width: 1024px) and (min-height: 768px) { */
+@media only screen and (min-width: 320px) and (orientation: portrait) {
+
+.topContainer {
+    margin-top: 5%;
+}
+.opponentHealthContainer {
+    width: 33vw;
+}
+.opponentHp {
+    font-size: 2rem;
+}
+.opponentHealthBar {
+    margin-left: 0.5%;
+    margin-top: 2.5%;
+}
+progress {
+    height: 1.5em;
+}
+.statsContainer {
+    font-size: 2.8rem;
+}
+.gamesPlayed,
+.playedNum,
+.gamesAccuracy,
+.accuracyNum {
+    line-height: 2.8rem;
+}
+.gameContainer {
+    height: 75%;
+    margin-top: 4%;
+}
+.card {
+    height: 16%;
+    width: 26%;
+}
+.healthContainer {
+    height: 3.5vh;
+    width: 86vw;
+    margin-top: 5vh;
+}
+.hp {
+    font-size: 2rem;
+}
+.healthBar {
+    margin-left: 0.5%;
+    margin-top: 0.5%;
+}
+.ash {
+    margin-top: 0px;
+    height: 17vh;
+}
+.dialogue {
+    font-size: 1.5rem;
+    margin: 4%;
+    padding: 2%;
+    height: 6vh;
+}
+#modalContent {
+    left: 17rem;
+    top: 36rem;
+}
+}
+
+/**************************************
+            DESKTOP VERSION
+**************************************/
+/* @media only screen and (min-width: 1400px) { */
+@media only screen and (min-width: 1367px) {
+
+.opponentHp {
+    font-size: 2.5rem;
+}
+.opponentHealthBar {
+    margin-top: 2.5%;
+}
+.healthContainer {
+    width: 60vw;
+    margin-top: 11rem;
+}
+.hp {
+    font-size: 2.5rem;
+}
+.healthBar {
+    margin-top: 1.5%;
+}
+progress {
+    width: 25em;
+}
+.gameContainer {
+    margin-top: 2%;
+}
+.gamesPlayed,
+.playedNum,
+.gamesAccuracy,
+.accuracyNum {
+    line-height: 2.8rem;
+}
+.dialogue {
+    margin-top: 7%;
+    font-size: 2.5rem;
+    height: 6rem;
+}
+.card {
+    height: 57%;
+    width: 11%;
+}
+.ash {
+    margin-top: 9vh;
+    height: 16rem;
+}
+}
