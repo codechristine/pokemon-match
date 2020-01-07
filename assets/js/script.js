@@ -3,8 +3,8 @@ $(document).ready(initializeApp);
 var firstCardClicked = null;
 var secondCardClicked = null;
 var matches = null;
-var maxMatches = 1;
-var attempts = 0;
+var maxMatches = 9;
+var round = 1;
 var gamesPlayed = 0;
 var pokemonCount = 0;
 var currentRound = -1;
@@ -79,31 +79,8 @@ var rounds = [
       { pokemonType: 'tentacool', front: 'tentacruel' },
     ]
   },
-  // {
-  //   background: 'assets/images/background-images/bg-unownDungeon.png',
-  //   pokemon: [
-  //     { pokemonType: 'p', front: 'p' },
-  //     { pokemonType: 'p', front: 'p' },
-  //     { pokemonType: 'o', front: 'o' },
-  //     { pokemonType: 'o', front: 'o' },
-  //     { pokemonType: 'k', front: 'k' },
-  //     { pokemonType: 'k', front: 'k' },
-  //     { pokemonType: 'e', front: 'e' },
-  //     { pokemonType: 'e', front: 'e' },
-  //     { pokemonType: 'm', front: 'm' },
-  //     { pokemonType: 'm', front: 'm' },
-  //     { pokemonType: 'o', front: 'o' },
-  //     { pokemonType: 'o', front: 'o' },
-  //     { pokemonType: 'n', front: 'n' },
-  //     { pokemonType: 'n', front: 'n' },
-  //     { pokemonType: 'exclam', front: 'exclam' },
-  //     { pokemonType: 'exclam', front: 'exclam' },
-  //     { pokemonType: 'dash', front: 'dash' },
-  //     { pokemonType: 'dash', front: 'dash' },
-  //   ]
-  // },
   {
-    background: 'assets/images/misc-images/pika-end-winner.gif',
+    background: 'assets/images/background-images/bg-viridianForest.jpg',
     pokemon: [
       { pokemonType: 'end', front: 'end'}
     ]
@@ -111,51 +88,45 @@ var rounds = [
 ]
 
 function initializeApp() {
-  // loadIntro();
   resetAndLoadRound();
   shuffle();
-  $('.modalNext').click(resetGame);
+  $('.modalNext').click(nextRound);
 }
-
-// function loadIntro(){
-//   var windowSize = self.outerWidth;
-//   console.log(windowSize);
-//   if(windowSize >= 453) {
-//     if ( windowSize === 768 || windowSize > 1024 ) {
-//       $('modalShadow').addClass('hidden');
-//       return;
-//     }
-//     $('#modalShadow').removeClass('hidden').css({ 'background-color': '#83d183'});
-//     $('#modalBody').css({ 'background-image': 'url("assets/images/misc-images/pika-intro-four.gif")' });
-//     $('#modalContent').css({ 'font-size': '2rem', 'width': '70%', 'left': '50%', 'top': '35vh', 'text-align': 'center'}).text('This game is best played in portrait mode.');
-//     $(button).addClass('exitButton').text('EXIT');
-//     $('#modalContent').append(button);
-//     $(button).on("click", function () {
-//       $('body').empty();
-//       $('body').addClass('landscapeNC').text('Please switch to portrait mode to play');
-//     });
-//   }
-// }
 
 function resetAndLoadRound() {
   currentRound++;
   $('#pokemonArena').empty();
-  $('.playedNum').text('1 of 3');
   shuffle();
   loadCurrentRound();
   $('.pokeball').on('click', handleCardClick);
 }
 
-function resetGame() {
+function nextRound() {
   $('#modalShadow').toggleClass('hidden');
   $('.pokeball').toggleClass('hidden');
   resetStats();
   resetHealthBar();
   displayStats();
   resetAndLoadRound();
-  // animateUnown('.card');
   shuffle();
   endGame();
+
+}
+function resetGame() {
+  $('#modalShadow').toggleClass('hidden');
+  $('#modalBody').removeClass('restartBody');
+  $('#modalContent').removeClass('restartContent');
+  $(button).addClass('playAgainButton').text('PLAY AGAIN');
+  $('.playedNum').text('1 of 3');
+  currentRound = 0;
+  round = 1;
+  gamesPlayed = 0;
+  displayStats();
+  resetStats();
+  resetHealthBar();
+  shuffle();
+  loadCurrentRound();
+  $('.pokeball').on('click', handleCardClick);
 }
 
 function shuffle() {
@@ -182,7 +153,7 @@ function loadCurrentRound() {
 function addCardToGameArea(pokemonClass, pokemonType) {
   var card = $('<div>').addClass('card');
   var pokeball = $('<div>').addClass('pokeball').attr('dataPokemon', pokemonType);
-  var pokemon = $('<div>').addClass(pokemonClass).addClass("pokemon");
+  var pokemon = $('<div>').addClass(pokemonClass).addClass('pokemon');
 
   card.append(pokeball, pokemon);
   $('#pokemonArena').append(card);
@@ -212,15 +183,14 @@ function clickedCard() {
   if (urlFirstCard === urlSecondCard) {
     $('.pokeball').addClass('avoidClicks');
     pokemonCount++;
-    $('#modalContent').text('Caught all ' + pokemonCount+ ' Pokemon!');
+    $('#modalContent').text('Caught all ' + pokemonCount + ' Pokemon!');
     $(button).addClass('modalNext').text('NEXT >');
     $('#modalContent').append(button);
-    $(button).click(resetGame);
+    $(button).click(nextRound);
     matches++;
-    attempts++;
     allCardsAreMatched()
     displayStats()
-    var opponentHealthBar = document.getElementById("opponentHealthBar");
+    var opponentHealthBar = document.getElementById('opponentHealthBar');
     opponentHealthBar.value -= 10;
     firstCardClicked = null;
     secondCardClicked = null;
@@ -231,9 +201,8 @@ function clickedCard() {
     }, 500);
   } else if (urlFirstCard !== urlSecondCard) {
     $('.pokeball').addClass('avoidClicks');
-    attempts++;
     displayStats()
-    var healthBar = document.getElementById("healthBar");
+    var healthBar = document.getElementById('healthBar');
     healthBar.value -= 10;
     if (healthBar.value === 0) {
       if (pokemonCount === 0) {
@@ -246,8 +215,8 @@ function clickedCard() {
       $('#modalBody').css({'background-image': 'url("assets/images/misc-images/pika-loser.png")'});
       $(button).addClass('playAgainButton').text('PLAY AGAIN');
       $('#modalContent').append(button);
-      $(button).on("click", function () {
-        window.location.reload();
+      $(button).on('click', function () {
+        resetGame();
       });
     }
     setTimeout(function () {
@@ -260,6 +229,7 @@ function clickedCard() {
   }
   if (matches === maxMatches) {
     gamesPlayed++;
+    round++;
     displayStats();
     resetStats();
     updateText();
@@ -271,8 +241,7 @@ function updateText() {
 }
 
 function displayStats() {
-  $('.playedNum').text(gamesPlayed);
-  $('.attemptNum').text(attempts);
+  $('.playedNum').text(round);
   $('.accuracyNum').text(calculateAccuracy);
 }
 
@@ -283,7 +252,7 @@ function calculateAccuracy() {
 
 function resetStats() {
   matches = null;
-  attempts = 0;
+  pokemonCount = 0;
 }
 
 function resetHealthBar() {
@@ -293,36 +262,17 @@ function resetHealthBar() {
   opponentHealthBar.value = 100;
 }
 
-// function makeNewPosition() {
-//   var h = $('#pokemonArena').height() - 90;
-//   var w = $('#pokemonArena').width() - 90;
-
-//   var nh = Math.floor(Math.random() * h);
-//   var nw = Math.floor(Math.random() * w);
-
-//   return [nh, nw];
-// }
-
-// function animateUnown(myclass) {
-//   if (gamesPlayed === 3) {
-//     var newPosition = makeNewPosition();
-//     $(myclass).animate({ top: newPosition[0], left: newPosition[1] }, 2500, function () {
-//       animateUnown(myclass);
-//     })
-//   }
-//   return;
-// }
-
 function endGame(){
   if(gamesPlayed === 3) {
-    $('body').empty();
-    $('body').css({ 'height': '0px' });
-    var endDialogue = $('<div>').addClass('endDialogue').text('You caught all the Pokemon!');
-    $(button).addClass('restartGame').text('PLAY AGAIN');
-    $('body').append(button);
-    $('body').append(endDialogue);
-    $(button).on("click", function () {
-      window.location.reload();
+    $('#modalShadow').removeClass('hidden');
+    $('#modalBody').addClass('restartBody').css({ 'background-image': 'url("assets/images/misc-images/pika-end-winner.gif")' });
+
+    $('#modalContent').addClass('restartContent').text('You caught all the Pokemon!');
+    $(button).addClass('playAgainButton').text('PLAY AGAIN');
+    $('#modalContent').append(button);
+    $(button).on('click', function () {
+       // window.location.reload();
+      resetGame();
     });
   }
 }
