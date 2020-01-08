@@ -29,7 +29,7 @@
     margin-top: 7vh;
 }
 .healthContainer {
-    height: 7.5vh;
+    height: 8.3vh;
     width: 40vw;
     margin-top: 5vh;
 }
@@ -54,7 +54,7 @@
 }
 
 /**************************************
-        IPHONEX MOBILE PORTRAIT
+        IPHONE X MOBILE PORTRAIT
 **************************************/
 /* @media only screen and (max-width: 1024px) and (min-height: 768px) { */
 @media only screen and (width: 375px) and (height: 812px) and (orientation: portrait) {
@@ -86,6 +86,9 @@
 }
 .hp {
     font-size: 1.3rem;
+}
+.bottomContainer {
+    margin-top: 0px;
 }
 .ash {
     height: 15vh;
@@ -121,6 +124,12 @@
   height: 16%;
   width: 16%;
 }
+.healthContainer {
+    width: 63vw;
+}
+.bottomContainer {
+    margin-top: 0px;
+}
 .dialogue {
     height: 5vh;
     font-size: 1.3rem;
@@ -136,7 +145,7 @@
 }
 
 /**************************************
-            IPAD LANDSCAPE
+            IPHONE X LANDSCAPE
 **************************************/
 @media only screen and (width: 812px) and (height: 375px) and (orientation: landscape) {
 
@@ -186,7 +195,8 @@
 }
 .healthContainer {
     width: 40vw;
-    margin-top: 10rem;
+    margin-top: 7rem;
+    height: 6vh;
 }
 .gameContainer {
     margin-top: 5%;
@@ -202,7 +212,7 @@ progress {
     height: 18rem;
 }
 .dialogue {
-    margin-top: 10%;
+    margin-top: 6%;
     font-size: 1.7rem;
     height: 7vh;
 }
@@ -214,6 +224,9 @@ progress {
 /* @media only screen and (min-width: 1400px) { */
 @media only screen and (min-width: 1367px) {
 
+.topContainer {
+    margin-top: 0px;
+}
 .opponentHp {
     font-size: 2.5rem;
 }
@@ -221,8 +234,9 @@ progress {
     margin-top: 2.5%;
 }
 .healthContainer {
-    width: 60vw;
-    margin-top: 11rem;
+    margin-top: 8rem;
+    height: 15vh;
+    width: 37vw;
 }
 .hp {
     font-size: 2.5rem;
