@@ -1,11 +1,117 @@
+
 /**************************************
-            IPAD PORTRAIT
+            MOBILE PORTRAIT
+**************************************/
+/* @media only screen and (max-width: 1024px) and (min-height: 768px) { */
+@media only screen and (min-width: 320px) and (orientation: portrait) {
+
+.topContainer {
+    margin-top: 5%;
+}
+.opponentHealthContainer {
+    width: 33vw;
+}
+.opponentHp {
+    font-size: 1.3rem;
+}
+.statsContainer {
+    font-size: 1rem;
+}
+.gameContainer {
+    height: 63%;
+    margin-top: 4%;
+}
+.card {
+    height: 19%;
+    width: 26%;
+}
+.bottomContainer {
+    margin-top: 7vh;
+}
+.healthContainer {
+    height: 7.5vh;
+    width: 40vw;
+    margin-top: 5vh;
+}
+.hp {
+    font-size: 1.3rem;
+}
+.ash {
+    height: 15vh;
+}
+.dialogue {
+    font-size: 0.8rem;
+    height: 9vh;
+}
+#modalContent {
+    left: 24vw;
+    top: 40vh;
+}
+#modalContent.restartContent {
+    left: 57vw;
+    top: 75vh;
+}
+}
+
+/**************************************
+        IPHONEX MOBILE PORTRAIT
+**************************************/
+/* @media only screen and (max-width: 1024px) and (min-height: 768px) { */
+@media only screen and (width: 375px) and (height: 812px) and (orientation: portrait) {
+
+.topContainer {
+    margin-top: 5%;
+}
+.opponentHealthContainer {
+    width: 33vw;
+}
+.opponentHp {
+    font-size: 1.3rem;
+}
+.statsContainer {
+    font-size: 1rem;
+}
+.gameContainer {
+    height: 70%;
+    margin-top: 4%;
+}
+.card {
+    height: 14%;
+    width: 26%;
+}
+.healthContainer {
+    height: 7.5vh;
+    width: 40vw;
+    margin-top: 5vh;
+}
+.hp {
+    font-size: 1.3rem;
+}
+.ash {
+    height: 15vh;
+}
+.dialogue {
+    font-size: 0.8rem;
+    height: 9vh;
+}
+#modalContent {
+    left: 24vw;
+    top: 36vh;
+}
+#modalContent.restartContent {
+    left: 57vw;
+    top: 75vh;
+}
+}
+
+/**************************************
+        IPAD & IPAD PRO PORTRAIT
 **************************************/
 /* @media only screen and (min-width: 768px) and (min-height: 1024px){ */
 @media only screen and (min-width: 768px) and (min-height: 1023px) and (orientation: portrait) {
 
 .healthContainer {
-    height: 5.5vh;
+    height: 4.5vh;
 }
 .gameContainer {
   height: 62%;
@@ -14,6 +120,55 @@
 .card {
   height: 16%;
   width: 16%;
+}
+.dialogue {
+    height: 5vh;
+    font-size: 1.3rem;
+}
+#modalContent {
+    left: 29vw;
+    top: 45vh;
+}
+#modalContent.restartContent {
+    left: 57vw;
+    top: 75vh;
+}
+}
+
+/**************************************
+            IPAD LANDSCAPE
+**************************************/
+@media only screen and (width: 812px) and (height: 375px) and (orientation: landscape) {
+
+.healthContainer {
+    width: 36vw;
+}
+.card {
+  height: 57%;
+}
+}
+
+/**************************************
+            IPAD LANDSCAPE
+**************************************/
+@media only screen and (width: 1024px) and (height: 768px) and (orientation: landscape) {
+
+.healthContainer {
+    width: 48vw;
+    height: 6vh;
+    margin-top: 4.5rem
+}
+.gameContainer {
+  margin-top: 5%;
+}
+.card {
+  height: 36%;
+}
+.ash {
+    height: 26vh;
+}
+.dialogue {
+    font-size: 1.3rem;
 }
 }
 
@@ -50,73 +205,6 @@ progress {
     margin-top: 10%;
     font-size: 1.7rem;
     height: 7vh;
-}
-}
-
-/**************************************
-            MOBILE PORTRAIT
-**************************************/
-/* @media only screen and (max-width: 1024px) and (min-height: 768px) { */
-@media only screen and (min-width: 320px) and (orientation: portrait) {
-
-.topContainer {
-    margin-top: 5%;
-}
-.opponentHealthContainer {
-    width: 33vw;
-}
-.opponentHp {
-    font-size: 2rem;
-}
-.opponentHealthBar {
-    margin-left: 0.5%;
-    margin-top: 2.5%;
-}
-progress {
-    height: 1.5em;
-}
-.statsContainer {
-    font-size: 2.8rem;
-}
-.gamesPlayed,
-.playedNum,
-.gamesAccuracy,
-.accuracyNum {
-    line-height: 2.8rem;
-}
-.gameContainer {
-    height: 75%;
-    margin-top: 4%;
-}
-.card {
-    height: 16%;
-    width: 26%;
-}
-.healthContainer {
-    height: 3.5vh;
-    width: 86vw;
-    margin-top: 5vh;
-}
-.hp {
-    font-size: 2rem;
-}
-.healthBar {
-    margin-left: 0.5%;
-    margin-top: 0.5%;
-}
-.ash {
-    margin-top: 0px;
-    height: 17vh;
-}
-.dialogue {
-    font-size: 1.5rem;
-    margin: 4%;
-    padding: 2%;
-    height: 6vh;
-}
-#modalContent {
-    left: 17rem;
-    top: 36rem;
 }
 }
 
