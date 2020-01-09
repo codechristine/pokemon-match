@@ -5,9 +5,6 @@
 /* @media only screen and (max-width: 1024px) and (min-height: 768px) { */
 @media only screen and (min-width: 320px) and (orientation: portrait) {
 
-.topContainer {
-    margin-top: 5%;
-}
 .opponentHealthContainer {
     width: 33vw;
 }
@@ -59,9 +56,6 @@
 /* @media only screen and (max-width: 1024px) and (min-height: 768px) { */
 @media only screen and (width: 375px) and (height: 812px) and (orientation: portrait) {
 
-.topContainer {
-    margin-top: 5%;
-}
 .opponentHealthContainer {
     width: 33vw;
 }
@@ -132,7 +126,8 @@
 }
 .dialogue {
     height: 5vh;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
+    overflow: scroll;
 }
 #modalContent {
     left: 29vw;
@@ -187,9 +182,6 @@
 /* @media only screen and (max-width: 1025px) and (min-height: 1024px){ */
 @media only screen and (min-width: 1366px) and (orientation: landscape) {
 
-.topContainer {
-    margin-top: 5%;
-}
 .healthBar {
     margin-top: 5.5%;
 }
@@ -224,9 +216,6 @@ progress {
 /* @media only screen and (min-width: 1400px) { */
 @media only screen and (min-width: 1367px) {
 
-.topContainer {
-    margin-top: 0px;
-}
 .opponentHp {
     font-size: 2.5rem;
 }
