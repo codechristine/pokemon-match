@@ -90,7 +90,7 @@ var rounds = [
 function initializeApp() {
   resetAndLoadRound();
   shuffle();
-  $('.modalNext').click(nextRound);
+  $('.nextButton').click(nextRound);
 }
 
 function resetAndLoadRound() {
@@ -184,7 +184,7 @@ function clickedCard() {
     $('.pokeball').addClass('avoidClicks');
     pokemonCount++;
     $('#modalContent').text('Caught all ' + pokemonCount + ' Pokemon!');
-    $(button).addClass('modalNext').text('NEXT >');
+    $(button).addClass('nextButton').text('NEXT');
     $('#modalContent').append(button);
     $(button).click(nextRound);
     matches++;
