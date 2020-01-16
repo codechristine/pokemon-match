@@ -37,7 +37,7 @@
     height: 15vh;
 }
 .dialogue {
-    font-size: 0.8rem;
+    font-size: 0.6rem;
     height: 9vh;
 }
 #modalContent {
@@ -88,11 +88,11 @@
     height: 15vh;
 }
 .dialogue {
-    font-size: 0.8rem;
+    font-size: 0.6rem;
     height: 9vh;
 }
 #modalContent {
-    left: 24vw;
+    left: 28vw;
     top: 36vh;
 }
 #modalContent.restartContent {
@@ -132,10 +132,12 @@
 #modalContent {
     left: 29vw;
     top: 45vh;
+    font-size: 1.3rem;
 }
 #modalContent.restartContent {
-    left: 57vw;
+    left: 53vw;
     top: 75vh;
+    font-size: 3rem;
 }
 }
 
@@ -257,5 +259,9 @@ progress {
 .ash {
     margin-top: 9vh;
     height: 16rem;
+}
+#modalContent {
+    font-size: 2.5rem;
+    left: 41vw;
 }
 }

@@ -6,12 +6,13 @@ A front-end web developed memory match theme game
 
 - HTML5
 - CSS3
+- Flexbox
 - Javascript
 - jQuery
 
 ## Live Demo
 
-Try the application live at [https://student-grade-table.lfz.com](https://student-grade-table.lfz.com)
+Try the application live at [https://pokemon-match.christinele.dev](https://pokemon-match.christinele.dev)
 
 ## Features
 
@@ -25,7 +26,7 @@ Try the application live at [https://student-grade-table.lfz.com](https://studen
 
 ## Preview
 
-![Memory-Match](images/memory-match.gif)
+![Memory-Match](assets/demo/live-demo.gif)
 
 ## Development
 
