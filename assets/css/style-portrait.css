@@ -227,7 +227,7 @@ progress {
 .healthContainer {
     margin-top: 11rem;
     height: 3rem;
-    width: 54rem;
+    width: 43rem;
 }
 .hp {
     font-size: 2.5rem;
@@ -249,7 +249,7 @@ progress {
 }
 .dialogue {
     margin-top: 5%;
-    font-size: 2.5rem;
+    font-size: 2rem;
     height: 6rem;
 }
 .card {

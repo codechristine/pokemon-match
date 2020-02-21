@@ -3,7 +3,8 @@ $(document).ready(initializeApp);
 var firstCardClicked = null;
 var secondCardClicked = null;
 var matches = null;
-var maxMatches = 9;
+// var maxMatches = 9;
+var maxMatches = 8;
 var round = 1;
 var gamesPlayed = 0;
 var pokemonCount = 0;
@@ -117,7 +118,6 @@ function resetGame() {
   $('#modalBody').removeClass('restartBody');
   $('#modalContent').removeClass('restartContent');
   $(button).addClass('playAgainButton').text('PLAY AGAIN');
-  $('.playedNum').text('1 of 3');
   currentRound = 0;
   round = 1;
   gamesPlayed = 0;
@@ -148,6 +148,8 @@ function loadCurrentRound() {
     var currentBackground = background[pokeI];
     addCardToGameArea(currentCard.front, currentCard.pokemonType, currentBackground.background);
   }
+  displayStats();
+  resetStats();
 }
 
 function addCardToGameArea(pokemonClass, pokemonType) {
@@ -165,10 +167,19 @@ function handleCardClick(event) {
 }
 
 function allCardsAreMatched() {
-  if (matches == maxMatches)
+  gamesPlayed++;
+  round++;
+  $('.pokeball').addClass('hidden');
+  setTimeout(function () {
     $('#modalShadow').removeClass('hidden');
     $('#modalBody').css({ 'background-image': 'url("assets/images/misc-images/pika-winner.gif")' });
-  }
+    $('#modalContent').text('Caught all ' + pokemonCount + ' Pokemon!');
+    $(button).addClass('nextButton').text('NEXT');
+    $('#modalContent').append(button);
+    $(button).click(nextRound);
+    updateText();
+  }, 1000);
+}
 
 function clickedCard() {
   if (firstCardClicked == null) {
@@ -183,19 +194,14 @@ function clickedCard() {
   if (urlFirstCard === urlSecondCard) {
     $('.pokeball').addClass('avoidClicks');
     pokemonCount++;
-    $('#modalContent').text('Caught all ' + pokemonCount + ' Pokemon!');
-    $(button).addClass('nextButton').text('NEXT');
-    $('#modalContent').append(button);
-    $(button).click(nextRound);
     matches++;
-    allCardsAreMatched()
-    displayStats()
+    displayStats();
     var opponentHealthBar = document.getElementById('opponentHealthBar');
     opponentHealthBar.value -= 10;
     firstCardClicked = null;
     secondCardClicked = null;
     setTimeout(function () {
-      $('.pokeball').removeClass('avoidClicks')
+      $('.pokeball').removeClass('avoidClicks');
       $(firstCardClicked).removeClass('hidden');
       $(secondCardClicked).removeClass('hidden');
     }, 500);
@@ -227,12 +233,15 @@ function clickedCard() {
       $('.pokeball').removeClass('avoidClicks');
     }, 500);
   }
-  if (matches === maxMatches) {
-    gamesPlayed++;
-    round++;
-    displayStats();
-    resetStats();
-    updateText();
+  if(matches === maxMatches){
+    opponentHealthBar.value = 0;
+    pokemonCount++;
+    allCardsAreMatched();
+  //   gamesPlayed++;
+  //   round++;
+  //   displayStats();
+  //   resetStats();
+  //   updateText();
   }
 }
 
@@ -272,6 +281,7 @@ function endGame(){
     $('#modalContent').append(button);
     $(button).on('click', function () {
        // window.location.reload();
+      // $('.dialogue').text('Catch the Pokemon by Matching them Together');
       resetGame();
     });
   }
